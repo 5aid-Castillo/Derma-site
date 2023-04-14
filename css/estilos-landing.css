@@ -1,0 +1,718 @@
+/* estilos para primer banner de página */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hero .info-hero {
+    width: 60%;
+    height: 40%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hero .info-hero h1 {
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.hero .info-hero hr {
+    width: 140px;
+}
+
+.hero .info-hero p {
+    text-align: center;
+    width: 50%;
+}
+
+.hero .img-hero {
+    width: 100%;
+    height: 60%;
+    background-image: url('../img/imgs-landing/banner-landing.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+}
+
+/* estilos para primer banner de página */
+
+/*  CTA 1 */
+
+.cta-1 {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-1 .contenedor-productos-tendencia {
+    width: 100;
+    height: 49%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cta-1 .contenedor-productos-tendencia .izq {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.cta-1 .contenedor-productos-tendencia .izq .line-prod-tend {
+    width: 200px;
+    height: 2px;
+    background: #000;
+    position: relative;
+    top:30px;
+    right: 100px;
+}
+
+.cta-1 .contenedor-productos-tendencia .izq h4 {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.cta-1 .contenedor-productos-tendencia .der p {
+    font-size: 27px;
+    font-weight: 200;
+}
+
+.cta-1 .contenedor-imagenes {
+    width: 100;
+    height: 51%;
+    background: #DDBEA9;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+} 
+
+
+/* styles SWIPER */
+
+.swiper {
+    width: 60%;
+    height: 70%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 1px 8px 5px 0px rgba(58,58,58,0.75);
+    -webkit-box-shadow: 1px 8px 5px 0px rgba(58,58,58,0.75);
+    -moz-box-shadow: 1px 8px 5px 0px rgba(58,58,58,0.75);
+    cursor: pointer;
+}
+
+
+
+.swiper-slide .img-product {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide .img-product img {
+    width: 50% ;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.swiper-slide .informacion-producto {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide .informacion-producto .nombre-producto {
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.swiper-slide .informacion-producto .precio-producto {
+    font-weight: 700;
+    font-size: 14px;
+}
+/*  CTA 1 */
+
+/* sección acerca de  */
+
+.acerca-de {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #FFB4A2;
+    padding:80px
+}
+
+.acerca-de .izq-acerca-de {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.acerca-de .izq-acerca-de h4 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.acerca-de .izq-acerca-de p {
+    font-weight: 300;
+    width: 60%;
+}
+.acerca-de .der-acerca-de {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acerca-de .der-acerca-de img {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:644px){
+  .izq-acerca-de h4{
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  .der-acerca-de img{
+    margin-top: 6rem;
+  }
+  .izq-acerca-de ul li{
+    font-size: 0.7rem;
+  }
+}
+
+/* acerca de */
+
+
+/* nuestros valores */
+
+.valores {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    padding:60px;
+}
+
+.valores .izq-valores {
+    width: 30%;
+    height: 100%;
+}
+
+.valores .izq-valores h4 {
+    font-size: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+    width: 220px;
+}
+.valores .der-valores {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.valores .der-valores .columna-valor {
+    width: 23%;
+    height: 200px;
+}
+
+.valores .der-valores .columna-valor svg {
+    width: 38px;
+    height: 38px;
+    padding: 10.5px;
+    background: #FFB4A2;
+    color:black;
+    margin-bottom: 15px;
+}
+
+.valores .der-valores .columna-valor .valor {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.valores .der-valores .columna-valor .texto-valor {
+    font-weight: 200;
+    font-size: 13px;
+}
+
+
+/* nuestros valores */
+
+
+/* CTA 2 - GRID */
+
+.cta-2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cta-2 h2 {
+    margin-bottom: 60px;
+    font-weight: 500;
+    font-size: 35px;
+}
+
+
+.parent {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(5, 3fr);
+    grid-template-rows: repeat(8, 3fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px; 
+}
+
+.cta-2 .parent .box {
+    cursor: pointer;
+}
+    
+.div1 {
+    grid-area: 1 / 1 / 5 / 4;
+    background-image: url('../img/imgs-landing/banner-landing.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.div2 {
+    grid-area: 5 / 1 / 9 / 2; 
+    background-image: url('../img/imgs-landing/prod4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.div3 {
+    grid-area: 5 / 2 / 9 / 4;
+    background-image: url('../img/imgs-landing/prod5.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.div4 {
+    grid-area: 1 / 4 / 3 / 5;
+    background-image: url('../img/imgs-landing/prod2.jpg');
+    background-size: cover;
+    background-position: center; 
+}
+    
+.div5 {
+    grid-area: 3 / 4 / 5 / 5;
+    background-image: url('../img/imgs-landing/prod2.jpg');
+    background-size: cover;
+    background-position: center; 
+}
+
+.div6 {
+    grid-area: 1 / 5 / 5 / 6;
+    background-image: url('../img/imgs-landing/prod3.jpg');
+    background-size: cover;
+    background-position: center; 
+}
+
+.div7 {
+    grid-area: 5 / 4 / 9 / 6;
+    background-image: url('../img/imgs-landing/prod6.jpg');
+    background-size: cover;
+    background-position: center; 
+} 
+
+    /* CTA 2 - GRID */
+
+
+/* cta 3 */
+
+.cta-3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.cta-3 .cta-3-izq {
+    width: 46%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 150px;
+}
+
+.cta-3 .cta-3-izq h2 {
+    width: 54%;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.cta-3 .cta-3-izq a {
+    font-weight: 400;
+    color:#000;
+    text-decoration: none;
+    padding-bottom: 10px;
+    border-bottom:1px solid black;
+    width: 200px;
+    transition: 0.4s ease;
+}
+
+.cta-3 .cta-3-izq a:hover {
+    color:#006EFF;
+    border-bottom:1px solid #006EFF;
+}
+
+.cta-3 .cta-3-der {
+    width: 60%;
+    height: 100%;
+    background:url('../img/imgs-landing/prod3.jpg');
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* FORMULARIO */
+
+.form {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 50px;
+}
+
+/* información del formulario */
+
+.form .info-form {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+}
+
+.form .info-form .izq-info {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.form .info-form .izq-info h3 {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.form .info-form .der-info {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .info-form .der-info p {
+    font-weight: 300;
+    font-size: 21px;
+}
+
+/* sección de inputs de form */
+
+form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+form .inputs-izq {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+form input, textarea {
+    padding:10px;
+    border:none;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+    outline: none;
+}
+
+form input {
+    height: 90px;
+}
+
+form textarea {
+    margin-bottom: 75px;
+}
+
+form input[type="submit"] {
+    width: 200px;
+    height: 30px;
+    margin:0 auto;
+    background: #E5989B;
+    color:#FFF;
+    border:none;
+    cursor: pointer;
+}
+
+form .inputs-der {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer{
+  padding: 0.5rem;
+  text-align: center;
+  color: white;
+  background-color: black;
+  
+}
+/* Media queries */
+
+@media screen and (max-width: 916px) {
+  .hero{
+    margin-top: 3rem;
+  }
+    .cta-1 .contenedor-productos-tendencia {
+        flex-direction: column;
+      }
+      .cta-1 .contenedor-productos-tendencia .izq {
+        flex-direction: column;
+        width: 100%;
+        margin: 20px;
+      }
+      .cta-1 .contenedor-productos-tendencia .izq .line-prod-tend {
+        width: 400px;
+        height: 2px;
+        background: #000;
+        position: inherit;
+        margin-top: 40px;
+      }
+      .cta-3 .cta-3-izq {
+        width: 56%;
+        padding-left: 100px;
+      }
+}
+
+@media screen and (max-width: 820px) {
+    .valores {
+        flex-direction: column;
+        padding:0;
+        height: 60vh;
+      }
+      .valores .izq-valores {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5rem;
+      }
+      .valores .der-valores {
+        width: 100%;
+        margin-bottom: 60px;
+      }
+      .form .info-form {
+        flex-direction: column;
+        margin-top: 60px;
+      }
+      .form .info-form .izq-info {
+        width: 80%;
+        text-align: center;
+      }
+      .form .info-form .der-info {
+        width: 80%;
+        text-align: center;
+      }
+      .swiper {
+        width: 80%;
+      }
+      /* resize of fonts */
+
+      .cta-1 .contenedor-productos-tendencia .izq h4 {
+        font-size: 6vw;
+      }
+      .cta-1 .contenedor-productos-tendencia .izq .line-prod-tend {
+        width: 30vw;
+      }
+      .cta-1 .contenedor-productos-tendencia .der p {
+        font-size: 5vw;
+        font-weight: 200;
+        padding:30px;
+        text-align: center;
+      }
+      .cta-1 .contenedor-productos-tendencia {
+        height: 39%;
+      }
+      .cta-2 h2 {
+        font-size: 4vw;
+      }
+      .cta-3 .cta-3-izq h2 {
+        font-size: 4vw;
+      }
+}
+
+@media screen and (max-width: 644px) {
+      .hero .info-hero {
+        margin: 30px auto;
+      }
+      .hero .img-hero {
+        background-attachment: inherit;
+      }
+      .hero .info-hero h1 {
+        font-size: 10vw;
+      }
+      .hero .info-hero hr {
+        margin-bottom: 40px;
+      }
+      .hero .info-hero p {
+        width: 100%;
+      }
+      .cta-2 {
+        margin-top: 60px;
+      }
+      .cta-2 h2 {
+        font-size: 6vw;
+      }
+      .cta-3 {
+        flex-direction: column;
+      }
+      .cta-3 .cta-3-izq {
+        width: 100%;
+        padding-left: 0px;
+        justify-content: space-evenly;
+        height: 40vh;
+        }
+      .cta-3 .cta-3-izq h2, .cta-3 .cta-3-izq a  {
+        margin: 0 auto;
+        font-size:5vw;
+        width: 50vw;
+        text-align: center;
+        }
+      .cta-3 .cta-3-izq h2 {
+        font-size: 7vw;
+        width: 80%;
+      }
+      .cta-3 .cta-3-der {
+        width: 100%;
+      }
+      .acerca-de {
+        flex-direction: column;
+        height: 70vh;
+        padding: 30px;
+      }
+      .acerca-de .izq-acerca-de {
+        height: 50%;
+        align-items: center;
+      }
+      .acerca-de .der-acerca-de {
+        height: 50%;
+      }
+      .acerca-de .izq-acerca-de h4 {
+        text-align: center;
+      }
+      .acerca-de .izq-acerca-de h4 {
+        font-size: 8vw;
+      }
+      .acerca-de .izq-acerca-de p {
+        font-size: 4vw;
+      }
+      .valores .der-valores .columna-valor {
+        width: 23%;
+        height: auto;
+      }
+      .form {
+        width: 100%;
+        height: auto;
+        margin-bottom: 50px;
+    }
+      .form .info-form .izq-info h3 {
+        font-weight: 600;
+        font-size: 6vw;
+        margin-bottom: 20px;
+      }
+      .form .info-form .der-info p {
+        font-weight: 300;
+        font-size: 5vw;
+      }
+      input, textarea {
+        -webkit-appearance:none;
+        -webkit-border-radius:0;
+      }
+      
+}
+
+@media screen and (max-width: 450px) {
+    form {
+        flex-direction: column;
+    }
+    form .inputs-izq {
+        width: 75%;
+    }
+    form .inputs-der {
+        width: 75%;
+    }
+    .valores {
+        height: 90vh;
+        margin: 60px 0;
+    }
+    .valores .der-valores {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    .valores .der-valores .columna-valor {
+        width: 70%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin:30px auto;
+      }
+      
+}
+

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/peladura.png" />
+    <link rel="stylesheet" href="css/estilos-generales.css" />
+    <!-- <link rel="stylesheet" href="css/estilos-landing.css" /> -->
+    <link rel="stylesheet" href="css/estilos-main.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/7e5b2d153f.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>BeautyCoShop</title>
+  </head>
+  <body>
+    <!-- <div class="blur"></div> -->
+    <!-- Inicio de barra de navegacion -->
+    <header class="header">
+      <nav class="nav">
+        <a href="/" class="logo nav-link">BeautyCoShop </a>
+
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="navbar">
+          <ul class="nav-menu">
+            <li class="nav-menu-item">
+              <a href="index.html#contacto" class="nav-menu-link nav-link"
+                >Contacto</a
+              >
+            </li>
+            <li class="nav-menu-item">
+              <a href="galeria.html" class="nav-menu-link nav-link">Galería</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="index.html#about" class="nav-menu-link nav-link"
+                >Nosotros</a
+              >
+            </li>
+            <li class="nav-menu-item">
+              <a href="#" class="nav-menu-link nav-link">Redes Sociales</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="tienda.html" class="nav-menu-link nav-link">Tienda</a>
+            </li>
+            <li class="nav-menu-item">
+              <a href="" class="nav-link">
+                <img src="./assets/usuario.png" class="icon" alt="user" />
+              </a>
+            </li>
+            <!-- <li class="nav-menu-item">
+              <a href="#" class="nav-menu-link nav-link"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  /></svg
+              ></a>
+            </li>
+            <li class="cart-icon nav-menu-item">
+              <a href="#" class="nav-menu-link nav-link">
+                <span class="cartNumItems">Cart ()</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-cart3"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                  />
+                </svg>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section main">
+      <div class="title">
+        <h1
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-center"
+          data-aos-duration="3000"
+        >
+          Productos
+        </h1>
+        <hr />
+        <div class="p-1">
+          <p
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-center"
+            data-aos-duration="3000"
+          >
+            Encuentra productos para el cuidado de la piel, pero si busca
+            respuesta sobre el cuidado de su piel, consulta a un especialista
+          </p>
+          <button
+            class="button-p"
+            role="button"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-center"
+            data-aos-duration="3000"
+          >
+            ¡Consultar Aquí!
+          </button>
+        </div>
+      </div>
+      <img
+        data-aos="fade-up"
+        data-aos-duration="3000"
+        src="./img/imgs-landing/banner-landing.jpg"
+        alt="landing"
+      />
+    </section>
+
+    <section class="section full-lg-screen">
+      <div class="popular">
+        <article class="care">
+          <p data-aos="fade-up" data-aos-duration="3000">Productos Populares</p>
+        </article>
+        <article class="care1">
+          <p data-aos="fade-up" data-aos-duration="3000">
+            ¡Cuidado también es salud y belleza!
+          </p>
+        </article>
+      </div>
+      <div class="popular-img">
+        <div class="img-1">
+          <img
+            src="./img/cosmetics2.jpeg"
+            alt=""
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          />
+        </div>
+        <div class="img-2">
+          <img
+            src="./img/cosmetic.jpg"
+            alt=""
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          />
+          <img
+            src="./img/cosm.jpg"
+            alt=""
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          />
+        </div>
+      </div>
+      <center class="btn-go"> 
+      <button class="button-go">Ver productos</button>
+      </center>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about">
+        <article class="about-us">
+          <h2 data-aos="fade-up" data-aos-duration="3000">
+            Acerca de nosotros
+          </h2>
+          <p>
+            Tienda especializada en ofrecer productos dermatológicos enfocados
+            a:
+          </p>
+          <ul>
+            <li>-Pieles con acné.</li>
+            <li>-Pieles con manchas.</li>
+            <li>-Pieles con cicatrices.</li>
+            <li>-Pieles con celulitis.</li>
+          </ul>
+        </article>
+        <article class="about-img">
+          <img
+            src="./img/imgs-landing/medic.svg"
+            alt="medic"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          />
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ethical">
+        <h2 data-aos="fade-up" data-aos-duration="3000">Nuestros valores</h2>
+        <div class="pad" data-aos="fade-up" data-aos-duration="3000">
+          <img src="./assets/corazon.png" class="icon" alt="health" />
+          <h4>Profesionalismo</h4>
+          <p>
+            Los productos ofrecidos en está tienda son seleccionados
+            cuidadosamente por profesionales de la salud con el propósito de
+            ofrecerte resultados esperados
+          </p>
+        </div>
+        <div class="pad" data-aos="fade-up" data-aos-duration="3000">
+          <img src="./assets/honestidad.png" class="icon" alt="" />
+          <h4>Honestidad</h4>
+          <p>
+            Los productos ofrecidos en esta tienda son adquiridos directamente
+            con la marca, por lo tanto, no hay intermediarios, en consecuencia
+            tenemos la seguridad de ofrecer lo que anunciamos.
+          </p>
+        </div>
+        <div class="pad" data-aos="fade-up" data-aos-duration="3000">
+          <img src="./assets/comprobado.png" class="icon" alt="" />
+          <h4>Compromiso</h4>
+          <p>
+            Los productos en esta tienda se ofertan a quien ya está con un
+            tratamiento dermatológico, sin embargo, si tienes dudas sobre ellos,
+            nuestro equipo de profesionales de la salud siempre están dispuestos
+            a ayudar y orientar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form" id="contacto">
+        <div class="contact">
+          <h2>Contáctenos</h2>
+          <p>Siéntase libre de escribirnos cualquier duda que tenga sobre nuestros productos.</p>
+        </div>
+      <form action="" class="contact-form box-shadow-1">
+        <input
+          type="text"
+          name="name"
+          placeholder="Nombre"
+          title="Nombre solo acepta letras y espacios en blanco"
+          pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="correo@ejemplo.com"
+          title="Email Incorrecto"
+          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+        />
+        <textarea name="comments" cols="50" rows="10" placeholder="Comentarios" required></textarea>
+        <!-- <div class="contact-form-loader text-center none"></div> -->
+        <input type="submit" class="send" value="Enviar">
+      </form>
+    </section>
+
+   
+    <!-- <div class="form" id="contacto">
+      <div class="info-form">
+        <div class="izq-info">
+          <h3 data-aos="zoom-out-right" data-aos-duration="3000">
+            Póngase en contacto para sabér más acerca de nuestros productos
+          </h3>
+        </div>
+        <div class="der-info">
+          <p data-aos="zoom-out-down" data-aos-duration="3000">
+            Siéntase libre de escribirnos cualquier duda que tenga sobre
+            nuestros productos.
+          </p>
+        </div>
+      </div> 
+     <form action="#" id="sendMessage">
+        <div class="inputs-izq" data-aos="zoom-out-up" data-aos-duration="3000">
+          <input type="text" placeholder="Nombre completo:" name="name" />
+          <input type="text" placeholder="Correo Electrónico:" name="email" />
+        </div>
+        <div class="inputs-der" data-aos="zoom-out" data-aos-duration="3000">
+          <textarea
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Mensaje"
+          ></textarea>
+          <input type="submit" value="Enviar" />
+          <div class="greenModal">Mensaje enviado !</div>
+        </div>
+      </form>
+    </div>   -->
+
+    <footer class="footer">
+      <p>
+        Copyright Ⓒ 2023 Brand name | Sitio desarrollado por
+        <a href="#">5aid Web Developer</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- AOS JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      AOS.init();
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 40,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
+    <script src="js/mobileBtn.js"></script>
+    <script src="js/navEffects.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/mail.js"></script>
+  </body>
+</html>

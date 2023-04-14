@@ -1,0 +1,51 @@
+/* Reset */
+* {
+    padding:0;
+    margin:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html{
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+body{
+  margin: 0;
+  overflow-x: hidden;
+  background-color: rgb(240, 240, 240);;
+}
+a{
+  transition: all 0.5s ease-out; 
+  text-decoration: none;
+}
+li{
+    list-style: none;
+  }
+  a:hover{
+    opacity: 0.75;
+  }
+  
+  /* img{
+    max-width: 100%;
+    height: auto;
+  } */
+  p{
+    line-height: 1.6;
+  }
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.section{
+  padding: 2rem 1rem;
+  
+}
