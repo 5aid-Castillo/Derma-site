@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/estilos-generales.css">
+    <link rel="stylesheet" href="../css/estilos-account.css">
+    <link rel="stylesheet" href="../index.css">
+    <script
+    src="https://kit.fontawesome.com/7e5b2d153f.js"
+    crossorigin="anonymous"
+  ></script>
+    <title>Cuenta -BeautyCoShop</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+          <a href="/" class="logo nav-link">BeautyCoShop </a>
+  
+          <button class="nav-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="navbar">
+            <ul class="nav-menu">
+              <li class="nav-menu-item">
+                <a href="../index.html#contacto" class="nav-menu-link nav-link"
+                  >Contacto</a
+                >
+              </li>
+              <li class="nav-menu-item">
+                <a href="../galeria.html" class="nav-menu-link nav-link">Galería</a>
+              </li>
+              <li class="nav-menu-item">
+                <a href="../index.html#about" class="nav-menu-link nav-link"
+                  >Nosotros</a
+                >
+              </li>
+              <li class="nav-menu-item">
+                <a href="#" class="nav-menu-link nav-link">Redes Sociales</a>
+              </li>
+              <li class="nav-menu-item">
+                <a href="../tienda.html" class="nav-menu-link nav-link">Tienda</a>
+              </li>
+              <li class="nav-menu-item">
+                <a href="login.html" class="nav-link">
+                  <img src="../assets/usuario.png" class="icon" alt="user" />
+                </a>
+              </li>
+              <!-- <li class="nav-menu-item">
+                <a href="#" class="nav-menu-link nav-link"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                    /></svg
+                ></a>
+              </li>
+              <li class="cart-icon nav-menu-item">
+                <a href="#" class="nav-menu-link nav-link">
+                  <span class="cartNumItems">Cart ()</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-cart3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                    />
+                  </svg>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Condicional IF si no tiene cuenta, mostrar esto: -->
+    <!--   <section class="account">
+        <h3 class="title">Ingresar</h3>
+      </section> -->
+      <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="user" class="label">Username</label>
+                        <input id="user" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign In">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <a href="#forgot">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="user" class="label">Username</label>
+                        <input id="user" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Repeat Password</label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Email Address</label>
+                        <input id="pass" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <label for="tab-1">Already Member?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+      <!-- Else si tiene una cuenta mostrar esto:  -->
+
+      <script src="../js/mobileBtn.js"></script>
+</body>
+</html>
