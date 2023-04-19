@@ -86,67 +86,112 @@
       </header>
 
       <!-- Condicional IF si no tiene cuenta, mostrar esto: -->
-    <!--   <section class="account">
-        <h3 class="title">Ingresar</h3>
-      </section> -->
-      <div class="login-wrap">
-        <div class="login-html">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-            <div class="login-form">
-                <div class="sign-in-htm">
-                    <div class="group">
-                        <label for="user" class="label">Username</label>
-                        <input id="user" type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                        <input id="check" type="checkbox" class="check" checked>
-                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Sign In">
-                    </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <a href="#forgot">Forgot Password?</a>
-                    </div>
-                </div>
-                <div class="sign-up-htm">
-                    <div class="group">
-                        <label for="user" class="label">Username</label>
-                        <input id="user" type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                        <label for="pass" class="label">Repeat Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                    <div class="group">
-                        <label for="pass" class="label">Email Address</label>
-                        <input id="pass" type="text" class="input">
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Sign Up">
-                    </div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <label for="tab-1">Already Member?</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <section class="account">
+        <div class="overlay"></div>
+        <img src="../img/110.jpg" alt="">
+
+        <div class="accountContent container">
+        
+          <div class="login-html">
+              <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Identificarme</label>
+              <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Regitrarme</label>
+              <div class="login-form">
+                  <div class="sign-in-htm">
+                      <div class="group">
+                          <label for="user" class="label">Correo</label>
+                          <input id="user" type="text" class="input" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                      </div>
+                      <div class="group">
+                          <label for="pass" class="label">Contraseña</label>
+                          <input id="pass" type="password" class="input" data-type="password" required>
+                      </div>
+                      <div class="group">
+                          <input type="submit" class="button" value="Iniciar">
+                      </div>
+                      <div class="hr"></div>
+                      <div class="foot-lnk">
+                          <a href="#forgot">Olvide mi contraseña</a>
+                      </div>
+                  </div>
+                  <form method="POST" id="form-signup">
+                  <div class="sign-up-htm">
+                      <div class="group">
+                          <label for="user" class="label">Nombre</label>
+                          <input id="name" name="name" type="text" class="input"pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"  required>
+                      </div>
+                      <div class="group">
+                          <label for="pass" class="label">Correo electronico</label>
+                          <input id="email" name="email" type="text" class="input" required>
+                      </div>
+                      <div class="group">
+                          <label for="pass" class="label">Contraseña</label>
+                          <input id="pass" name="pass" type="password" class="input" data-type="password" required>
+                        </div>
+                      <div class="group">
+                          <label for="pass" class="label">Repetir Contraseña</label>
+                          <input id="pass" name="pass2" type="password" class="input" data-type="password" required>
+                      </div>
+                      
+                      <p class="warnings" id="warnings"></p>
+
+                      <div class="group">
+                          <input type="submit" class="button" name="sign__up" value="Registrar">
+                      </div>
+                      <div class="hr"></div>
+                      <div class="foot-lnk">
+                          <label for="tab-1">Ya tengo una cuenta</a>
+                      </div>
+                  </div>
+                  </form>
+              </div>
+          </div>
+     
+      </section> 
     
     
       <!-- Else si tiene una cuenta mostrar esto:  -->
 
       <script src="../js/mobileBtn.js"></script>
+      <script src="../js/regex.js"></script>
+      <script>
+        const namex = document.getElementById("name");
+const email = document.getElementById("email");
+const pass = document.getElementById("pass");
+const form = document.getElementById("form-signup");
+const warnx = document.getElementById("warnings");
+
+form.addEventListener("submit", e =>{
+    e.preventDefault()
+    let warnings = "";
+    let getin = false;
+    
+    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    warnx.innerHTML = ""
+    
+    if(namex.value.length < 3){
+        warnings += `El nombre no es valido <br>`
+        getin = true
+    }
+    if(!regexEmail.test(email.value)){
+        warnings += `El email no es valido <br>`
+        getin = true
+    }
+    if(pass.value.length < 6){
+        warnings += `La contraseña no es valida<br>`
+        getin = true
+    }  
+    if(getin){
+        warnx.innerHTML = warnings
+    }else{
+      
+      /* <?php 
+          if(isset($_POST['sign__up'])){
+            require("../helpers/sign_up.php");
+          }
+        
+        ?> */
+    }
+})
+      </script>
 </body>
 </html>
