@@ -30,45 +30,54 @@
   margin: 0 auto;
   margin-top: 1.5rem;
 }
+/*  */
 .button-p {
-  --b: 3px;
-  --s: 0.45em;
-  --color: #373b44;
-  cursor: pointer;
-  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background: conic-gradient(
-      from 90deg at var(--b) var(--b),
-      #0000 90deg,
-      var(--color) 0
-    )
-    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-    calc(100% - var(--b) - 2 * var(--_p));
-  transition: 0.3s ease-out;
-  outline: var(--b) solid #0000;
-  outline-offset: 0.6em;
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 1rem;
+  background-color: black;
   border: 0;
-
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  outline: 0;
+  padding: 10px 18px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
-.button-p:hover {
-  background-color: whitesmoke;
-  /* --_p: 0px; */
-  outline-color: var(--color);
-  outline-offset: 0.05em;
+.button-p:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
 }
 
-/* .button-p:active {
-  background: var(--color);
-  color: #fff;
-} */
+.button-p:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .button-p {
+    padding: 16px 48px;
+  }
+}
+
+/*  */
 .main img {
   margin-top: 1rem;
   width: 100%;
@@ -142,8 +151,8 @@
     margin-top: 2rem;
 }
 .button-go {
-  background: #FFB4A2;
-  border: 1px solid #FFB4A2;
+  background: #FFB4A27A;
+  border: 2px dashed black;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
@@ -193,7 +202,8 @@
 
 /* About */
 .about {
-  background-color: rgb(229, 191, 96);
+  /* background-color: rgb(229, 191, 96); */
+  background: #FFB4A27A;
   width: 100%;
   height: max-content;
   display: flex;
@@ -354,7 +364,7 @@
   margin-top: 0;
   cursor: pointer;
   transition: all 0.5s ease-out;
-  background-color: #ffb4a2;
+  background-color: var(--second-color);
   font-weight: bold;
   color: black;
   border-radius: 10px;
@@ -396,3 +406,7 @@
     margin-left: 0;
   }
 }
+
+
+
+

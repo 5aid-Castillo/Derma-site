@@ -44,7 +44,7 @@
 }
 .nav-menu-link:hover,
 .nav-menu-link_active {
-  background-color: black;
+  background-color: var(--second-color);
   transition: 0.5s;
 }
 
@@ -58,14 +58,15 @@
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 18px;
     padding: 0 20px;
   }
   .navbar {
     position: absolute;
     height: 100vh;
     margin: 0;
-    background-color: hsl(0, 3%, 83%);
+    /* background-color: hsl(0, 3%, 83%); */
+    background: var(--first-color);
     padding:20px 0;
     width: 100%;
     top: 60px;
@@ -107,7 +108,7 @@
 
 @media screen and (min-width: 851px) {
   .logo {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .header {
     position: sticky;
@@ -132,7 +133,7 @@
     color: black;
   }
   .navbar > .nav-menu > .nav-menu-item > .nav-link:hover {
-    color: white;
+    color: black;
   }
 
 }
@@ -319,5 +320,11 @@ estilos modales
   }
   to {
     transform: translateX(0px);
+  }
+}
+
+@media screen and (max-width: 222px){
+  .logo{
+    font-size: 12px;
   }
 }
