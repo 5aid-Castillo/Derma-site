@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style> 
+   .flex{
+	display: flex;
+	align-items: center;
+  }
+  .grid{
+	display: grid;
+	align-items: center;
+  }
+  .products{
+	padding-top:3rem;
+  }
+  .products .mainContent{
+	justify-content: center;
+	gap: 1rem;
+  }
+  .products .mainContent .single-product{
+	overflow: hidden;
+    border-radius: 1rem;
+    height: 100%;
+    display: grid;
+    row-gap: 10px;
+    row-gap: 5px;
+    box-shadow: 0 2px 8px 2px rgba(178,178,178,0.45);
+	background-color: white;
+  }
+  .products .mainContent .single-product .prodImage{
+	height: 200px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;	
+  }
+  .products .mainContent .single-product .prodImage a img{
+	height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .products .mainContent .single-product .prodFooter{
+	padding: 1rem;
+
+  }
+  .products .mainContent .single-product .prodFooter .descProduct{
+	font-size: 1rem;
+	font-weight: 700;
+	color: black;
+	/* position: relative; */
+   padding: 10px;
+	word-break: normal;
+	display: flex;
+	flex-direction: column;
+  }
+  .sourceBtn{
+	justify-content: space-between ;
+  }
+  .descProduct small{
+	color: black;
+    font-size: 10px;
+  }
+  .prodFooter .flex{
+	font-size: 16px;
+	font-weight: 600;
+	align-items: flex-start;
+	transform: translateY(5px);
+}
+
+@media screen and (min-width:480px){
+    .products{
+        padding-top: 10rem;
+    }
+}
+
+@media screen and (min-width:720px){
+    .products{
+        padding-top: 7rem;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .products .mainContent{
+              
+                grid-template-columns: repeat(3,1fr);
+                gap: 1.5rem !important; 
+            
+        }
+    
+}
+    </style>
+   
+   <section class="products section container">
+    <div class="mainContent grid">
+
+      <div class="single-product">
+          <div class="prodImage">
+            <a href=""><img src="./img/products/topialyse.jpg" alt=""></a>
+          </div>
+          <div class="prodFooter">
+            <div class="descProduct">
+              <small>Producto</small>
+              <small>Descripcion</small>
+              <small>Precio</small>
+            </div>
+            <div class="sourceBtn flex">
+              <button>Detalles</button>
+            </div>
+          </div>
+     </div>
+
+    </div>
+</section>
+
+</body>
+</html>

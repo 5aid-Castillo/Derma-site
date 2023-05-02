@@ -1,3 +1,11 @@
+<?php 
+if(isset($_POST['sign__up'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $pass = $_POST['pass'];
+    $pass_r = $_POST['pass-r'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +13,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/estilos-generales.css">
-    <link rel="stylesheet" href="../css/estilos-account.css">
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../css/estilos-generales.css?v=2">
+    <link rel="stylesheet" href="../css/estilos-account.css?v=2">
+    <link rel="stylesheet" href="../index.css?v=2">
     <script
     src="https://kit.fontawesome.com/7e5b2d153f.js"
     crossorigin="anonymous"
@@ -44,7 +52,7 @@
                 <a href="../tienda.html" class="nav-menu-link nav-link">Tienda</a>
               </li>
               <li class="nav-menu-item">
-                <a href="login.html" class="nav-link">
+                <a href="account.php" class="nav-link">
                   <img src="../assets/usuario.png" class="icon" alt="user" />
                 </a>
               </li>
@@ -93,53 +101,42 @@
         <div class="accountContent container">
         
           <div class="login-html">
-              <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Identificarme</label>
-              <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Regitrarme</label>
+              <input  type="radio" name="tab" class="sign-in" ><label  class="tab"><a href="login.php" style="color:white;">Identificarme</a></label>
+              <input  type="radio" name="tab" class="sign-up" checked><label class="tab"><a href="signup.php" style="color:white;">Regitrarme</a></label>
               <div class="login-form">
-                  <div class="sign-in-htm">
-                      <div class="group">
-                          <label for="user" class="label">Correo</label>
-                          <input id="user" type="text" class="input" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
-                      </div>
-                      <div class="group">
-                          <label for="pass" class="label">Contraseña</label>
-                          <input id="pass" type="password" class="input" data-type="password" required>
-                      </div>
-                      <div class="group">
-                          <input type="submit" class="button" value="Iniciar">
-                      </div>
-                      <div class="hr"></div>
-                      <div class="foot-lnk">
-                          <a href="#forgot">Olvide mi contraseña</a>
-                      </div>
-                  </div>
+                  
                   <form method="POST" id="form-signup">
                   <div class="sign-up-htm">
                       <div class="group">
                           <label for="user" class="label">Nombre</label>
-                          <input id="name" name="name" type="text" class="input"pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"  required>
+                          <input id="name" name="name" type="text" value="<?php if(isset($name)) echo $name?>" class="input"pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"  required>
                       </div>
                       <div class="group">
                           <label for="pass" class="label">Correo electronico</label>
-                          <input id="email" name="email" type="text" class="input" required>
+                          <input id="email" name="email" type="text" value="<?php if(isset($email)) echo $email?>"  class="input" required>
                       </div>
                       <div class="group">
                           <label for="pass" class="label">Contraseña</label>
-                          <input id="pass" name="pass" type="password" class="input" data-type="password" required>
+                          <input id="pass" name="pass" type="password" value ="<?php if(isset($pass)) echo $pass?>" class="input" data-type="password" required>
                         </div>
                       <div class="group">
                           <label for="pass" class="label">Repetir Contraseña</label>
-                          <input id="pass" name="pass2" type="password" class="input" data-type="password" required>
+                          <input id="pass-r" name="pass-r" type="password" value ="<?php if(isset($pass)) echo $pass_r?>" class="input" data-type="password" required>
                       </div>
                       
-                      <p class="warnings" id="warnings"></p>
+                      <p class="warnings" id="warnings">
+                        
+                        <?php 
+                            include('../helpers/sign_up.php');
+                        ?>
+                      </p>
 
                       <div class="group">
                           <input type="submit" class="button" name="sign__up" value="Registrar">
                       </div>
                       <div class="hr"></div>
                       <div class="foot-lnk">
-                          <label for="tab-1">Ya tengo una cuenta</a>
+                          <label>Ya tengo una cuenta</a>
                       </div>
                   </div>
                   </form>
@@ -147,51 +144,10 @@
           </div>
      
       </section> 
-    
-    
       <!-- Else si tiene una cuenta mostrar esto:  -->
 
       <script src="../js/mobileBtn.js"></script>
-      <script src="../js/regex.js"></script>
-      <script>
-        const namex = document.getElementById("name");
-const email = document.getElementById("email");
-const pass = document.getElementById("pass");
-const form = document.getElementById("form-signup");
-const warnx = document.getElementById("warnings");
-
-form.addEventListener("submit", e =>{
-    e.preventDefault()
-    let warnings = "";
-    let getin = false;
-    
-    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-    warnx.innerHTML = ""
-    
-    if(namex.value.length < 3){
-        warnings += `El nombre no es valido <br>`
-        getin = true
-    }
-    if(!regexEmail.test(email.value)){
-        warnings += `El email no es valido <br>`
-        getin = true
-    }
-    if(pass.value.length < 6){
-        warnings += `La contraseña no es valida<br>`
-        getin = true
-    }  
-    if(getin){
-        warnx.innerHTML = warnings
-    }else{
+      <!-- <script src="../js/regex.js"></script> -->
       
-      /* <?php 
-          if(isset($_POST['sign__up'])){
-            require("../helpers/sign_up.php");
-          }
-        
-        ?> */
-    }
-})
-      </script>
 </body>
 </html>

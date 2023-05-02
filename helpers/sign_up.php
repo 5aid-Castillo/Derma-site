@@ -1,19 +1,46 @@
 <?php 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $pass2 = $_POST['pass2'];
+require('../db/connect_db.php');
+if(isset($_POST['sign__up'])){
+        
+    
+        $campos  = array(); 
 
-    require('../db/connect_db.php');
+        $checkmail = mysqli_query($link, "SELECT * FROM usuarios WHERE correo = '$email'");
+        $result = mysqli_num_rows($checkmail);
+        /* $regex = '/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/'; 
+         */
+            if(strlen($name) < 4){
+                array_push ($campos, "El nombre no es valido <br>");
+            }
+            if(strlen($name) > 15){
+                array_push($campos,"El nombre es demasiado largo <br>");
+            }
+            
+            if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+                array_push($campos,"El email no es valido <br>");
+            }
+            if(strlen($pass) < 6){
+                array_push($campos,"La contraseña no es valida<br>");
+            }else{
 
-    /* $con =  mysqli_query($link,"SELECT * FROM usuarios WHERE correo = '$email'");
-    $check_mail = mysqli_num_rows($con);
-    if($check_mail > 0){
-        echo ' <script
-				language="javascript">alert("Atencion,ya existe el mail designado para usuario, verifique sus datos"); </script>
-				';
-    }else{ */
-        mysqli_query($link,"INSERT INTO usuarios VALUES(NULL,'$name','$email','$pass','0')");
+                if($pass !== $pass_r){
+                    array_push($campos,"Las contraseñas no coinciden<br>");
+                }
+            }
+            if($result > 0){
+                array_push($campos, "El correo electronico ya esta en uso<br>");
+            }
+            if(count($campos) > 0){
+                for($i=0;$i<count($campos); $i++){
+                    echo "$campos[$i]";
+                }
+            }else{
+                $encrypt = sha1($pass);
+                mysqli_query($link,"INSERT INTO usuarios VALUES(NULL,'$name','$email','$encrypt','0')");
+                echo("<script>location.href = '../index.php';</script>");
+               
+        }
 
-    /* } */
+    }
+ 
     ?>

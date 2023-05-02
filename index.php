@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+<?php 
+  include('db/connect_db.php');
+  session_start();
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/assets/peladura.png" />
-    <link rel="stylesheet" href="css/estilos-generales.css" />
+    <link rel="stylesheet" href="css/estilos-generales.css?v=2" />
     <!-- <link rel="stylesheet" href="css/estilos-landing.css" /> -->
-    <link rel="stylesheet" href="css/estilos-main.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="css/estilos-main.css?v=2" />
+    <link rel="stylesheet" href="./index.css?v=2" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -28,7 +32,15 @@
         <a href="/" class="logo nav-link">Beauty </a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
-          <i class="fas fa-bars"></i>
+          <!-- <i class="fas fa-bars"></i> -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="40"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+          </svg>
         </button>
         <div class="navbar">
           <ul class="nav-menu">
@@ -46,53 +58,24 @@
               >
             </li>
             <li class="nav-menu-item">
-              <a href="redes.html" class="nav-menu-link nav-link">Redes Sociales</a>
+              <a href="redes.html" class="nav-menu-link nav-link"
+                >Redes Sociales</a
+              >
             </li>
             <li class="nav-menu-item">
-              <a href="tienda.html" class="nav-menu-link nav-link">Tienda</a>
+              <a href="tienda.php" class="nav-menu-link nav-link">Tienda</a>
             </li>
             <li class="nav-menu-item">
-              <a href="./account/login.html" class="nav-link">
+              <a href="./account/account.php" class="nav-link">
                 <img src="./assets/usuario.png" class="icon" alt="user" />
               </a>
             </li>
-            <!-- <li class="nav-menu-item">
-              <a href="#" class="nav-menu-link nav-link"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-search"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                  /></svg
-              ></a>
-            </li>
-            <li class="cart-icon nav-menu-item">
-              <a href="#" class="nav-menu-link nav-link">
-                <span class="cartNumItems">Cart ()</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-cart3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                  />
-                </svg>
-              </a>
-            </li> -->
+           
           </ul>
         </div>
       </nav>
     </header>
-
+      
     <section class="section main">
       <div class="title">
         <h1
@@ -129,9 +112,9 @@
         src="./img/imgs-landing/banner-landing.jpg"
         alt="landing"
       />
-    </section> 
+    </section>
 
-     <section class="section full-lg-screen">
+    <section class="section full-lg-screen">
       <div class="popular">
         <article class="care">
           <p data-aos="fade-up" data-aos-duration="3000">Productos Populares</p>
@@ -172,10 +155,10 @@
           />
         </div>
       </div>
-      <center class="btn-go"> 
-      <button class="button-go">Ver productos</button>
+      <center class="btn-go">
+        <button class="button-go">Ver productos</button>
       </center>
-    </section> 
+    </section>
 
     <section class="section" id="about">
       <div class="about">
@@ -203,9 +186,9 @@
           />
         </article>
       </div>
-    </section> 
+    </section>
 
-     <section class="section">
+    <section class="section">
       <div class="ethical">
         <h2 data-aos="fade-up" data-aos-duration="3000">Nuestros valores</h2>
         <div class="pad" data-aos="fade-up" data-aos-duration="3000">
@@ -238,12 +221,15 @@
         </div>
       </div>
     </section>
- 
-     <section class="section form" id="contacto">
-        <div class="contact">
-          <h2>Contáctenos</h2>
-          <p>Siéntase libre de escribirnos cualquier duda que tenga sobre nuestros productos.</p>
-        </div>
+
+    <section class="section form" id="contacto">
+      <div class="contact">
+        <h2>Contáctenos</h2>
+        <p>
+          Siéntase libre de escribirnos cualquier duda que tenga sobre nuestros
+          productos.
+        </p>
+      </div>
       <form action="" class="contact-form box-shadow-1">
         <input
           type="text"
@@ -260,21 +246,30 @@
           title="Email Incorrecto"
           pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
         />
-        <textarea name="comments" cols="50" rows="10" placeholder="Comentarios" required></textarea> 
+        <textarea
+          name="comments"
+          cols="50"
+          rows="10"
+          placeholder="Comentarios"
+          required
+        ></textarea>
         <!-- <div class="contact-form-loader text-center none"></div> -->
-        <input type="submit" class="send" value="Enviar">
+        <input type="submit" class="send" value="Enviar" />
       </form>
-    </section> 
-
+    </section>
 
     <!-- WhatsApp -->
 
-      <div class="chat">
-        <a href="https://api.whatsapp.com/send?phone=+51987654321" class="btn-wsp" target="_blank">
-          <i class="fa fa-whatsapp icono"></i>
-      </a>  
-      </div>
-<!-- 
+    <div class="chat">
+      <a
+        href="https://api.whatsapp.com/send?phone=+51987654321"
+        class="btn-wsp"
+        target="_blank"
+      >
+        <i class="fa fa-whatsapp icono"></i>
+      </a>
+    </div>
+    <!-- 
     <footer class="footer">
       <p>
         Copyright Ⓒ 2023 Brand name | Sitio desarrollado por
