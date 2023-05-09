@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
-include('./db/connect_db.php');
-
+ include('db/connect_db.php');
+ session_start();
 ?>
 <html lang="en">
   <head>
@@ -12,16 +12,13 @@ include('./db/connect_db.php');
     <link rel="stylesheet" href="css/estilos-main.css?v=2" />
     <link rel="stylesheet" href="css/stylesTienda.css?v2" />
     <link rel="stylesheet" href="./index.css?v=2" />
-    <!-- <script
-      src="https://kit.fontawesome.com/7e5b2d153f.js"
-      crossorigin="anonymous"
-    ></script> -->
+   
     <title>Tienda</title>
   </head>
   <body>
-    <header class="header">
+  <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link">BeautyCoShop </a>
+        <a href="/" class="logo nav-link-ss">Beauty </a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
           <!-- <i class="fas fa-bars"></i> -->
@@ -34,41 +31,43 @@ include('./db/connect_db.php');
             <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
           </svg>
         </button>
-        <div class="navbar">
+        <div class="navbar-main">
           <ul class="nav-menu">
-            <li class="nav-menu-item">
-              <a href="index.php#contacto" class="nav-menu-link nav-link"
+            <li class="nav-menu-item-ss">
+              <a href="index.html#contacto" class="nav-menu-link-ss nav-link-ss"
                 >Contacto</a
               >
             </li>
-            <li class="nav-menu-item">
-              <a href="galeria.html" class="nav-menu-link nav-link">Galería</a>
+            <li class="nav-menu-item-ss">
+              <a href="galeria.html" class="nav-menu-link-ss nav-link-ss">Galería</a>
             </li>
-            <li class="nav-menu-item">
-              <a href="index.php#about" class="nav-menu-link nav-link"
+            <li class="nav-menu-item-ss">
+              <a href="index.html#about" class="nav-menu-link-ss nav-link-ss"
                 >Nosotros</a
               >
             </li>
-            <li class="nav-menu-item">
-              <a href="redes.html" class="nav-menu-link nav-link"
+            <li class="nav-menu-item-ss">
+              <a href="redes.html" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a
               >
             </li>
-            <li class="nav-menu-item">
-              <a href="tienda.php" class="nav-menu-link nav-link">Tienda</a>
+            <li class="nav-menu-item-ss">
+              <a href="tienda.php" class="nav-menu-link-ss nav-link-ss">Tienda</a>
             </li>
-            <li class="nav-menu-item">
-              <a href="account/account.php" class="nav-link">
+            <li class="nav-menu-item-ss">
+              <a href="./account/account.php" class="nav-link-ss">
                 <img src="./assets/usuario.png" class="icon" alt="user" />
               </a>
             </li>
+           
           </ul>
         </div>
       </nav>
     </header>
-
+    
     <section class="banner">
       <h2 class="title">Tienda</h2>
+      
     </section>
 
      <section class="productos"> 
@@ -127,7 +126,7 @@ include('./db/connect_db.php');
                      
                 </div>
                 <div class="sourceBtn flex">
-                  <button class="detalles-btn" onclick="location.href='pages/products.php?id_product=<?php echo $row['id_producto'];?>'">Detalles</button>
+                  <button class="detalles-btn" onclick="location.href='pages/products.php?id_producto=<?php echo $row['id_producto'];?>'">Detalles</button>
                 </div>
               </div>
          </div>
@@ -138,43 +137,7 @@ include('./db/connect_db.php');
         </div>
     </section>
 
-    
-<!-- 
-    <section class="section main container">
-        <div class="secContent grid">
-          
-          <div class="single-product">
-              <a href="">
-              <div class="imgDiv">
-                <img src="./img/products/<?php echo $row['imagen']?>" alt="<?php echo $row['producto']; ?>">
-              </div>
-              </a>
-              <div class="cardInfo">
-                <h4 class="prodTitle"><?php echo $row['producto'];?></h4>
-                <div class="fees flex">
-                  <div class="price">
-                    <h5><?php echo $row['precio'];?></h5>
-                  </div>
-                </div>
-
-                <div class="desc">
-                  <p><?php echo $row['resumen'];?></p>
-                </div>
-
-                <button class="flex">
-                  Detalles
-                </button>
-              </div>
-            </div> 
-            
-         
-        </div>
-    </section>  -->
-
-
-
-   
-   
+      
     <!-- WhatsApp -->
 
      <div class="chat">
@@ -187,17 +150,8 @@ include('./db/connect_db.php');
       </a>
     </div> 
 
-    <!-- <script src="js/navEffects.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
-    <!-- <script src="js/appTienda.js"></script> -->
-    <script src="js/mobileBtn.js"></script>
-    
-   <!--  <script src="js/carrito.js"></script> -->
+   <script src="js/mobileBtn.js"></script>
+    <script src="js/carrito.js"></script> 
 
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script> -->
   </body>
 </html>

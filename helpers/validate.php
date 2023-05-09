@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      if($result = mysqli_fetch_array($query)){
          if($password == $result['password']){
              session_start();   
-            $_SESSION['idu'] = $result['id'];
+            $_SESSION['idu'] = $result['id_usuario'];
             $_SESSION['user'] = $result['usuario']; 
             
             echo("<script>location.href = '../index.php';</script>");

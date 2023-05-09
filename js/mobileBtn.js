@@ -1,5 +1,5 @@
 const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".navbar");
+const navMenu = document.querySelector(".navbar-main");
 
 navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("nav-menu_visible");

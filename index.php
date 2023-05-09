@@ -22,6 +22,8 @@
       src="https://kit.fontawesome.com/7e5b2d153f.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   
     <title>BeautyCoShop</title>
   </head>
   <body>
@@ -29,7 +31,7 @@
     <!-- Inicio de barra de navegacion -->
     <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link">Beauty </a>
+        <a href="/" class="logo nav-link-ss">Beauty </a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
           <!-- <i class="fas fa-bars"></i> -->
@@ -42,31 +44,31 @@
             <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
           </svg>
         </button>
-        <div class="navbar">
+        <div class="navbar-main">
           <ul class="nav-menu">
-            <li class="nav-menu-item">
-              <a href="index.html#contacto" class="nav-menu-link nav-link"
+            <li class="nav-menu-item-ss">
+              <a href="index.html#contacto" class="nav-menu-link-ss nav-link-ss"
                 >Contacto</a
               >
             </li>
-            <li class="nav-menu-item">
-              <a href="galeria.html" class="nav-menu-link nav-link">Galería</a>
+            <li class="nav-menu-item-ss">
+              <a href="galeria.html" class="nav-menu-link-ss nav-link-ss">Galería</a>
             </li>
-            <li class="nav-menu-item">
-              <a href="index.html#about" class="nav-menu-link nav-link"
+            <li class="nav-menu-item-ss">
+              <a href="index.html#about" class="nav-menu-link-ss nav-link-ss"
                 >Nosotros</a
               >
             </li>
-            <li class="nav-menu-item">
-              <a href="redes.html" class="nav-menu-link nav-link"
+            <li class="nav-menu-item-ss">
+              <a href="redes.html" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a
               >
             </li>
-            <li class="nav-menu-item">
-              <a href="tienda.php" class="nav-menu-link nav-link">Tienda</a>
+            <li class="nav-menu-item-ss">
+              <a href="tienda.php" class="nav-menu-link-ss nav-link-ss">Tienda</a>
             </li>
-            <li class="nav-menu-item">
-              <a href="./account/account.php" class="nav-link">
+            <li class="nav-menu-item-ss">
+              <a href="./account/account.php" class="nav-link-ss">
                 <img src="./assets/usuario.png" class="icon" alt="user" />
               </a>
             </li>
@@ -101,6 +103,7 @@
             data-aos="fade-up"
             data-aos-anchor-placement="center-center"
             data-aos-duration="3000"
+            onclick="location.href='consulta.php'"
           >
             ¡Consultar Aquí!
           </button>
@@ -156,7 +159,7 @@
         </div>
       </div>
       <center class="btn-go">
-        <button class="button-go">Ver productos</button>
+        <button class="button-go" onclick="location.href='tienda.php'">Ver productos</button>
       </center>
     </section>
 
@@ -230,10 +233,11 @@
           productos.
         </p>
       </div>
-      <form action="" class="contact-form box-shadow-1">
+      <div class="contact-form box-shadow-1">
         <input
           type="text"
           name="name"
+          id="name"
           placeholder="Nombre"
           title="Nombre solo acepta letras y espacios en blanco"
           pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
@@ -242,20 +246,27 @@
         <input
           type="email"
           name="email"
+          id="email"
           placeholder="correo@ejemplo.com"
           title="Email Incorrecto"
           pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
         />
         <textarea
           name="comments"
+          id="comments"
           cols="50"
           rows="10"
           placeholder="Comentarios"
           required
         ></textarea>
-        <!-- <div class="contact-form-loader text-center none"></div> -->
-        <input type="submit" class="send" value="Enviar" />
-      </form>
+        
+        
+        <input type="submit" href="javascript:;" onclick="send($('#name').val(),$('#email').val(),$('#comments').val());return false;" class="send" id="send" name="send" value="Enviar" />
+        <div id="resultado"></div>
+</div>
+        </div>
+
+      </article>
     </section>
 
     <!-- WhatsApp -->
@@ -276,13 +287,13 @@
         <a href="#">5aid Web Developer</a>
       </p>
     </footer> -->
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- AOS JS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+    
+   
     <!-- Initialize Swiper -->
     <script>
       AOS.init();
@@ -305,8 +316,8 @@
       });
     </script>
     <script src="js/mobileBtn.js"></script>
-    <script src="js/navEffects.js"></script>
-    <script src="js/carrito.js"></script>
-    <script src="js/mail.js"></script>
+    <script src="js/contacto.js"></script>
+
+    
   </body>
 </html>

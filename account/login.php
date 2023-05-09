@@ -20,34 +20,39 @@
 <body>
     <header class="header">
         <nav class="nav">
-          <a href="/" class="logo nav-link">BeautyCoShop </a>
+          <a href="/" class="logo nav-link-ss">BeautyCoShop </a>
   
           <button class="nav-toggle" aria-label="Abrir menú">
             <i class="fas fa-bars"></i>
           </button>
-          <div class="navbar">
+          <div class="navbar-main">
             <ul class="nav-menu">
-              <li class="nav-menu-item">
-                <a href="../index.html#contacto" class="nav-menu-link nav-link"
+              <li class="nav-menu-item-ss">
+                <a href="../index.php" class="nav-menu-link-ss nav-link-ss"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-menu-item-ss">
+                <a href="../index.php#contacto" class="nav-menu-link-ss nav-link-ss"
                   >Contacto</a
                 >
               </li>
-              <li class="nav-menu-item">
-                <a href="../galeria.html" class="nav-menu-link nav-link">Galería</a>
+              <li class="nav-menu-item-ss">
+                <a href="../galeria.html" class="nav-menu-link-ss nav-link-ss">Galería</a>
               </li>
-              <li class="nav-menu-item">
-                <a href="../index.html#about" class="nav-menu-link nav-link"
+              <li class="nav-menu-item-ss">
+                <a href="../index.php#about" class="nav-menu-link-ss nav-link-ss"
                   >Nosotros</a
                 >
               </li>
-              <li class="nav-menu-item">
-                <a href="#" class="nav-menu-link nav-link">Redes Sociales</a>
+              <li class="nav-menu-item-ss">
+                <a href="#" class="nav-menu-link-ss nav-link-ss">Redes Sociales</a>
               </li>
-              <li class="nav-menu-item">
-                <a href="../tienda.html" class="nav-menu-link nav-link">Tienda</a>
+              <li class="nav-menu-item-ss">
+                <a href="../tienda.php" class="nav-menu-link-ss nav-link-ss">Tienda</a>
               </li>
-              <li class="nav-menu-item">
-                <a href="account.php" class="nav-link">
+              <li class="nav-menu-item-ss">
+                <a href="account.php" class="nav-link-ss">
                   <img src="../assets/usuario.png" class="icon" alt="user" />
                 </a>
               </li>

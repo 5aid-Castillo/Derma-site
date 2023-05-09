@@ -7,7 +7,7 @@
 .header {
   position: fixed;
   background-color: white;
-  position: fixed;
+
   width: 100%;
   top: 0;
   left: 0;
@@ -38,17 +38,17 @@
   color: black;
   font-weight: 600;
 }
-.nav-menu-link{
+.nav-menu-link-ss{
     padding: 8px 12px;
     border-radius: 5px;
 }
-.nav-menu-link:hover,
+.nav-menu-link-ss:hover,
 .nav-menu-link_active {
   background-color: var(--second-color);
   transition: 0.5s;
 }
 
-.nav-menu-item a:hover{
+.nav-menu-item-ss a:hover{
     color: white;
 }
 @media screen and (max-width: 850px) {
@@ -61,7 +61,7 @@
     font-size: 18px;
     padding: 0 20px;
   }
-  .navbar {
+  .navbar-main{
     position: absolute;
     height: 100vh;
     margin: 0;
@@ -76,23 +76,23 @@
     transition: left 0.3s;
   }
 
-  .navbar > .nav-menu {
+  .navbar-main > .nav-menu {
     flex-direction: column;
     justify-content: center;
     width: 100%;
     margin: auto;
   }
-  .navbar > .nav-menu > .nav-menu-item {
+  .navbar-main > .nav-menu > .nav-menu-item-ss {
     padding: 1.2rem 0;
     text-align: center;
   }
-  .navbar > .nav-menu > .nav-menu-item > .nav-link {
+  .navbar-main > .nav-menu > .nav-menu-item-ss > .nav-link-ss {
     font-size: 1rem;
     font-weight: 600;
-    color: black;
+    color:black;
   }
   
-  .nav-menu-link:hover,
+  .nav-menu-link-ss:hover,
   .nav-menu-link_active {
     background: none;
     color: #83c5f7;
@@ -119,20 +119,20 @@
   .nav-toggle {
     display: none;
   }
-  .navbar > .nav-menu {
+  .navbar-main > .nav-menu {
     margin-top: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
   }
-  .navbar > .nav-menu > .nav-menu-item > .nav-link {
+  .navbar-main > .nav-menu > .nav-menu-item-ss > .nav-link-ss {
     padding: 0rem 0.5rem;
     font-size: 1rem;
     font-weight: 600;
     color: black;
   }
-  .navbar > .nav-menu > .nav-menu-item > .nav-link:hover {
+  .navbar-main > .nav-menu > .nav-menu-item-ss > .nav-link-ss:hover {
     color: black;
   }
 
@@ -144,9 +144,9 @@
   .nav {
     margin-top: 0.5rem;
   }
-  .navbar > .nav-menu > .nav-menu-item > .nav-link {
+  .navbar-main > .nav-menu > .nav-menu-item-ss > .nav-link-ss {
     padding: 0.5rem 0.9rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 

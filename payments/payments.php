@@ -1,19 +1,23 @@
 <!DOCTYPE html>
+<?php 
+/* include('../db/connect_db.php');
+session_start();
+if(@!$_SESSION['user']){
+  echo("<script>location.href = '../account/login.php';</script>");
+} */
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="../css/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/estilos-generales.css?v=2">
-    <link rel="stylesheet" href="../css/estilos-account.css?v=2">
-    <link rel="stylesheet" href="../index.css?v=2">
+    <link rel="stylesheet" href="../css/estilos-payments.css?v=2">
+        <link rel="stylesheet" href="../index.css?v=2">
     
-    <script
-    src="https://kit.fontawesome.com/7e5b2d153f.js"
-    crossorigin="anonymous"
-  ></script>
-    <title>Cuenta -BeautyCoShop</title>
+    <title>Carrito</title>
 </head>
 <body>
 <header class="header">
@@ -68,28 +72,25 @@
         </div>
       </nav>
     </header>
-      <?php
-            include('../db/connect_db.php');
-            session_start();
-            if(@!$_SESSION['user']){
-                echo("<script>location.href = 'login.php';</script>");
-            }
-      ?>
-      <div class="det">
-         <h2>Detalles de cuenta</h2>
-      </div>
-      <div class="datos">
-        
-        <p class="usuario">Cuenta:<strong> <?php echo $_SESSION['user'];?></strong></p>
-      </div>
-      <div class="btn-acs">
-        <button class="bn632-hover bn26" onclick="location.href='./cart.php'">Carrito <img src="../assets/cart.png" class="icon2"/></button>
-        <button class="bn632-hover bn26">Mis compras <img src="../assets/bolsa.png" class="icon2"/></button>
-        <button class="bn632-hover bn28" onclick="location.href='../account/exit.php'">Cerrar sesion</button>
-      </div>
     
-      <script src="../js/mobileBtn.js"></script>
-      <!-- <script src="../js/regex.js"></script> -->
+
+    <section class="payments">
+        <h2>Selecciona el metodo de pago</h2>
+        
+        <div class="buttons-payments">
+            <button class="button-oxxo">Pagar en efectivo</button>
+
+        </div>
+
+
+    </section>
+
+    <script>
+        Conekta.setPublicKey("");
+        
+    </script>
+    <script src="../js/mobileBtn.js"></script>
       
-</body>
+      <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    </body>
 </html>

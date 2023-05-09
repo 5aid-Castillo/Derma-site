@@ -37,7 +37,7 @@ if(isset($_POST['sign__up'])){
             }else{
                 $encrypt = sha1($pass);
                 mysqli_query($link,"INSERT INTO usuarios VALUES(NULL,'$name','$email','$encrypt','0')");
-                echo("<script>location.href = '../index.php';</script>");
+                echo("<script>location.href = '../account/login.php';</script>");
                
         }
 

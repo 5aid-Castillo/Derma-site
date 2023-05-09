@@ -8,6 +8,10 @@
     flex-wrap: wrap;
     
 }
+.detailsContainer img{
+  width: 100%;
+  height: 100%;
+}
 .col{
     max-width: 400px;
     margin: 20px;
@@ -19,7 +23,7 @@
     
 }
 .prodDetails{
-    font-size: 1rem;
+    font-size: 0.8em;
     word-spacing: 0.2rem;
 
 }
@@ -27,10 +31,10 @@
     margin-top: 0;
 }
 .icon2{
-	width: 20px;
-	height: 18px;
+	width: 20px !important;
+	height: 18px !important;
 }
-.button-5 {
+.button-cart {
     align-items: center;
     background-clip: padding-box;
     background-color: #fa6400;
@@ -42,7 +46,7 @@
     cursor: pointer;
     display: inline-flex;
     font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     justify-content: center;
     line-height: 1.25;
@@ -59,18 +63,107 @@
     width: auto;
   }
   
-  .button-5:hover,
-  .button-5:focus {
+  .button-cart:hover,
+  .button-cart:focus {
     background-color: #fb8332;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   }
   
-  .button-5:hover {
+  .button-cart:hover {
     transform: translateY(-1px);
   }
   
-  .button-5:active {
+  .button-cart:active {
     background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }
+.button-buy {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #02b517;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+  }
+  
+  .button-buy:hover,
+  .button-buy:focus {
+    background-color: #24be39;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+  
+  .button-buy:hover {
+    transform: translateY(-1px);
+  }
+  
+  .button-buy:active {
+    background-color: #00c80d;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }
+  /* btn-back */
+.button-back {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: var(--first-color);
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: 100%;
+  }
+  
+  .button-back:hover,
+  .button-back:focus {
+    background-color: var(--second-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+  
+  .button-back:hover {
+    transform: translateY(-1px);
+  }
+  
+  .button-back:active {
+    background-color: var(--second-color);
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
   }
@@ -81,9 +174,47 @@
     justify-content: center;
     gap: 10px;
   }
-
+  .choose button{
+    flex-wrap: wrap;
+  }
+  .btn-back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-box:disabled{
+    color:black;
+    opacity: 1 !important;
+  }
+  .btn-count{
+    color: black;
+    font-weight: bold;
+    background-color: rgb(65, 163, 243);
+    border: 2 px solid black;
+    padding: 0 0.9rem;
+    border-radius: 7px;
+    margin: 0.2rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  .product_cart1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
 @media screen and (min-width:851px){
     .product{
         margin-top: 1rem;
+    }
+    .prodDetails{
+      font-size: 1em;
+    }
+    .button-buy,
+    .button-cart{
+      font-size: 16px;
     }
 }
