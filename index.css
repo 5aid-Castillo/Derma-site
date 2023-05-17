@@ -2,7 +2,11 @@
 
 :root{
   --first-color:#ded1c1;
-  --second-color: #FFB4A27A;
+  --second-color: #ffdbd2;
+  /* --second-color: #FFB4A27A; */
+  
+  --third-color: #F46363;
+  
 }
 
 

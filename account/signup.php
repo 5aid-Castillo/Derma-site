@@ -42,16 +42,14 @@ if(isset($_POST['sign__up'])){
                   >Contacto</a
                 >
               </li>
-              <li class="nav-menu-item-ss">
-                <a href="../galeria.html" class="nav-menu-link-ss nav-link-ss">Galería</a>
-              </li>
+           
               <li class="nav-menu-item-ss">
                 <a href="../index.php#about" class="nav-menu-link-ss nav-link-ss"
                   >Nosotros</a
                 >
               </li>
               <li class="nav-menu-item-ss">
-                <a href="#" class="nav-menu-link-ss nav-link-ss">Redes Sociales</a>
+                <a href="../redes.php" class="nav-menu-link-ss nav-link-ss">Redes Sociales</a>
               </li>
               <li class="nav-menu-item-ss">
                 <a href="../tienda.php" class="nav-menu-link-ss nav-link-ss">Tienda</a>
@@ -83,7 +81,7 @@ if(isset($_POST['sign__up'])){
                   <div class="sign-up-htm">
                       <div class="group">
                           <label for="user" class="label">Nombre</label>
-                          <input id="name" name="name" type="text" value="<?php if(isset($name)) echo $name?>" class="input"pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"  required>
+                          <input id="name" name="name" type="text" value="<?php if(isset($name)) echo $name?>" class="input" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"  required>
                       </div>
                       <div class="group">
                           <label for="pass" class="label">Correo electronico</label>

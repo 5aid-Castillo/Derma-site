@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/estilos-generales.css?v=2">
     <link rel="stylesheet" href="../css/estilos-account.css?v=2">
     <link rel="stylesheet" href="../index.css?v=2">
@@ -37,16 +37,14 @@
                   >Contacto</a
                 >
               </li>
-              <li class="nav-menu-item-ss">
-                <a href="../galeria.html" class="nav-menu-link-ss nav-link-ss">Galería</a>
-              </li>
+           
               <li class="nav-menu-item-ss">
                 <a href="../index.php#about" class="nav-menu-link-ss nav-link-ss"
                   >Nosotros</a
                 >
               </li>
               <li class="nav-menu-item-ss">
-                <a href="#" class="nav-menu-link-ss nav-link-ss">Redes Sociales</a>
+                <a href="../redes.php" class="nav-menu-link-ss nav-link-ss">Redes Sociales</a>
               </li>
               <li class="nav-menu-item-ss">
                 <a href="../tienda.php" class="nav-menu-link-ss nav-link-ss">Tienda</a>
@@ -95,9 +93,9 @@
                           <input type="submit" class="button" name="log" id="log" value="Iniciar" >
                       </div>
                       <div class="hr"></div>
-                      <div class="foot-lnk">
+                      <!-- <div class="foot-lnk">
                           <a href="#forgot">Olvide mi contraseña</a>
-                      </div>
+                      </div> -->
                   </div>
                 </form>
               </div>
@@ -107,7 +105,7 @@
     
 
       <script src="../js/mobileBtn.js"></script>
-      <!-- <script src="../js/regex.js"></script> -->
+      
       
 </body>
 </html>

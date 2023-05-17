@@ -47,20 +47,23 @@
         <div class="navbar-main">
           <ul class="nav-menu">
             <li class="nav-menu-item-ss">
-              <a href="index.html#contacto" class="nav-menu-link-ss nav-link-ss"
-                >Contacto</a
+              <a href="index.php" class="nav-menu-link-ss nav-link-ss"
+                >Inicio</a
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="galeria.html" class="nav-menu-link-ss nav-link-ss">Galería</a>
+              <a href="index.php#contacto" class="nav-menu-link-ss nav-link-ss"
+                >Contacto</a
+              >
             </li>
+           
             <li class="nav-menu-item-ss">
-              <a href="index.html#about" class="nav-menu-link-ss nav-link-ss"
+              <a href="index.php#about" class="nav-menu-link-ss nav-link-ss"
                 >Nosotros</a
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="redes.html" class="nav-menu-link-ss nav-link-ss"
+              <a href="redes.php" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a
               >
             </li>
@@ -273,20 +276,14 @@
 
     <div class="chat">
       <a
-        href="https://api.whatsapp.com/send?phone=+51987654321"
+        href="https://wa.me/522212193377?text=Hola%20quiero%20saber%20más%20sobre%20sus%20servicios"
         class="btn-wsp"
         target="_blank"
       >
         <i class="fa fa-whatsapp icono"></i>
       </a>
     </div>
-    <!-- 
-    <footer class="footer">
-      <p>
-        Copyright Ⓒ 2023 Brand name | Sitio desarrollado por
-        <a href="#">5aid Web Developer</a>
-      </p>
-    </footer> -->
+   
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- AOS JS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

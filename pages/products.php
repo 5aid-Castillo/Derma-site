@@ -47,15 +47,12 @@
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="galeria.html" class="nav-menu-link nav-link-ss">Galería</a>
-            </li>
-            <li class="nav-menu-item-ss">
               <a href="../index.php#about" class="nav-menu-link-ss nav-link-ss"
                 >Nosotros</a
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="../redes.html" class="nav-menu-link-ss nav-link-ss"
+              <a href="../redes.php" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a
               >
             </li>
@@ -141,7 +138,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-dark">Iniciar sesión</button>
+        <button type="button" class="btn btn-dark" onclick="location.href='../account/login.php'">Iniciar sesión</button>
       </div>
     </div>
   </div>
@@ -212,33 +209,6 @@
         })
       }
       
-     
-    
-     /*  let sumar =) document.getElementById("mas");
-      let restar = document.getElementById("menos");
-      let contador = document.getElementById("contador");
-      
-      sumar.onclick = function() {
-        return contador.value = Number(contador.value) + 1;
-        
-      };
-
-      restar.onclick = function() {
-        return contador.value = Number(contador.value) - 1;
-        
-      }; 
-
-        console.log(contador.value); */
-      /* contador.onchange = function() {
-        
-      }; */ 
-
-      /* contador.onkeyup = function() {
-        if (contador.value === "") {
-          return;
-        }
-    
-      }; */
     </script>
      <script src="../js/mobileBtn.js"></script>
      <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>

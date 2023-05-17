@@ -48,16 +48,14 @@ if(@!$_SESSION['user']){
                 >Contacto</a
               >
             </li>
-            <li class="nav-menu-item-ss">
-              <a href="galeria.html" class="nav-menu-link nav-link-ss">Galería</a>
-            </li>
+         
             <li class="nav-menu-item-ss">
               <a href="../index.php#about" class="nav-menu-link-ss nav-link-ss"
                 >Nosotros</a
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="../redes.html" class="nav-menu-link-ss nav-link-ss"
+              <a href="../redes.php" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a
               >
             </li>
@@ -145,7 +143,7 @@ if(@!$_SESSION['user']){
          
 
           <?php if(isset($sql['id_carrito'])){?>
-          <button class="button-buy" onclick="location.href='../checkout.php'">Realizar Compra</button>
+          <button class="button-buy" onclick="location.href='../pages/checkout.php'">Realizar Compra</button>
         <?php } ?>
     </div>
   </section>

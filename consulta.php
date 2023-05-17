@@ -39,16 +39,14 @@
                 >Contacto</a
               >
             </li>
-            <li class="nav-menu-item">
-              <a href="galeria.html" class="nav-menu-link nav-link">Galería</a>
-            </li>
+           
             <li class="nav-menu-item">
               <a href="index.php#about" class="nav-menu-link nav-link"
                 >Nosotros</a
               >
             </li>
             <li class="nav-menu-item">
-              <a href="redes.html" class="nav-menu-link nav-link"
+              <a href="redes.php" class="nav-menu-link nav-link"
                 >Redes Sociales</a
               >
             </li>

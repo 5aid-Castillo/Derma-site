@@ -34,20 +34,23 @@
         <div class="navbar-main">
           <ul class="nav-menu">
             <li class="nav-menu-item-ss">
-              <a href="index.html#contacto" class="nav-menu-link-ss nav-link-ss"
-                >Contacto</a
+              <a href="index.php" class="nav-menu-link-ss nav-link-ss"
+                >Inicio</a
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="galeria.html" class="nav-menu-link-ss nav-link-ss">Galería</a>
+              <a href="index.php#contacto" class="nav-menu-link-ss nav-link-ss"
+                >Contacto</a
+              >
             </li>
+            
             <li class="nav-menu-item-ss">
-              <a href="index.html#about" class="nav-menu-link-ss nav-link-ss"
+              <a href="index.php#about" class="nav-menu-link-ss nav-link-ss"
                 >Nosotros</a
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="redes.html" class="nav-menu-link-ss nav-link-ss"
+              <a href="redes.php" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a
               >
             </li>

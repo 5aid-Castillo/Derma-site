@@ -79,9 +79,9 @@ if(@!$_SESSION['user']){
         
         <div class="buttons-payments">
             <button class="button-oxxo">Pagar en efectivo</button>
-
-        </div>
-
+            
+          </div>
+        
 
     </section>
 
@@ -92,5 +92,8 @@ if(@!$_SESSION['user']){
     <script src="../js/mobileBtn.js"></script>
       
       <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    
+      
+
     </body>
 </html>

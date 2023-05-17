@@ -174,13 +174,6 @@
   touch-action: manipulation;
   vertical-align: middle;
 
-  /*   background-color: #FFB4A2;
-    font-weight: bold;
-    border: 1px solid black;
-    padding: 1.5rem;
-    font-size: 1.3rem;
-    border-radius: 10px;
-    cursor: pointer; */
 }
 .button-go:hover,
 .button-go:active {
@@ -274,38 +267,6 @@
   }
 }
 
-/* Section Store */
-/* 
-.img-store{
-    display: block;
-    margin: 0 auto;
-    
-    width: auto;
-    height: auto;
-}
-.text-store{
-    font-size: 2rem;
-    text-align: center;
-}
-.text-store > h2{
-    margin: 1rem;
-    font-size: 0.9rem;
-    text-align: justify;
-}
-
-@media screen and (min-width:960px){
-    .to-store{
-        display: grid;
-        grid-template-columns: repeat(2,50%);
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-@media screen and (max-width:745px){
-    .sn-sp{
-        margin-top: 15rem;
-    }
-} */
 
 /* Form */
 .contact {
