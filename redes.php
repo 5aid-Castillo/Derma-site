@@ -37,6 +37,11 @@
                 >
               </li>
               <li class="nav-menu-item-ss">
+                <a href="./consulta.php" class="nav-menu-link-ss nav-link-ss"
+                  >Consultas</a
+                >
+              </li>
+              <li class="nav-menu-item-ss">
                 <a href="index.php#contacto" class="nav-menu-link-ss nav-link-ss"
                   >Contacto</a
                 >
@@ -54,11 +59,10 @@
                 <a href="tienda.php" class="nav-menu-link-ss nav-link-ss">Tienda</a>
               </li>
               <li class="nav-menu-item-ss">
-                <a href="./account/login.php" class="nav-link--s">
+                <a href="./account/login.php" class="nav-link-ss">
                   <img src="./assets/usuario.png" class="icon" alt="user" />
                 </a>
               </li>
-             
             </ul>
           </div>
         </nav>
@@ -87,7 +91,7 @@
                   <span class="tooltip">Instagram</span>
                   <span><i class="fab fa-instagram"></i></span>
                 </li>
-               
+          
                 <li class="icon whatsapp">
                   <span class="tooltip">Whatsapp</span>
                   <span><i class="fab fa-whatsapp"></i></span>
@@ -98,7 +102,6 @@
     
       
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
 <script src="js/mobileBtn.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

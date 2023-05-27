@@ -1,26 +1,25 @@
-<!DOCTYPE html>
 <?php 
-/* include('../db/connect_db.php');
-session_start();
-if(@!$_SESSION['user']){
-  echo("<script>location.href = '../account/login.php';</script>");
-} */
+    include('../db/connect_db.php');
+    session_start();   
 ?>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
 
+<html lang="en">
+  <head>
+      
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/estilos-generales.css?v=2">
-    <link rel="stylesheet" href="../css/estilos-payments.css?v=2">
-        <link rel="stylesheet" href="../index.css?v=2">
+    <link rel="stylesheet" href="../css/estilos-generales.css?v=2" />
+    <link rel="stylesheet" href="../css/estilos-consulta.css?v=2" />
+    <link rel="stylesheet" href="../index.css?v=2" />
     
-    <title>Carrito</title>
-</head>
-<body>
-<header class="header">
+    <title>Tienda</title>
+  </head>
+  <body>
+    <header class="header">
       <nav class="nav">
         <a href="/" class="logo nav-link-ss">BeautyCoShop </a>
 
@@ -48,15 +47,12 @@ if(@!$_SESSION['user']){
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="galeria.html" class="nav-menu-link nav-link-ss">Galería</a>
-            </li>
-            <li class="nav-menu-item-ss">
               <a href="../index.php#about" class="nav-menu-link-ss nav-link-ss"
                 >Nosotros</a
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="../redes.html" class="nav-menu-link-ss nav-link-ss"
+              <a href="../redes.php" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a
               >
             </li>
@@ -72,28 +68,31 @@ if(@!$_SESSION['user']){
         </div>
       </nav>
     </header>
+
+
+  
+   <section class='presencial'>
+        <h2>Consulta presencial</h2>
+        <h4>Para realizar tu consultar presencial envia un</h4>
+        <p><strong> </strong></p>
+   </section>
+
+    <!-- WhatsApp -->
+
+    <div class="chat">
+      <a
+        href="https://wa.me/522212193377?text=Hola!%20quisiera%20realizar%20una%20consulta."
+        class="btn-wsp"
+        target="_blank"
+      >
+        <i class="fa fa-whatsapp icono"></i>
+      </a>
+    </div>
+
+   
+   
     
-
-    <section class="payments">
-        <h2>Selecciona el metodo de pago</h2>
-        
-        <div class="buttons-payments">
-            <button class="button-oxxo">Pagar en efectivo</button>
-            
-          </div>
-        
-
-    </section>
-
-    <script>
-        Conekta.setPublicKey("");
-        
-    </script>
-    <script src="../js/mobileBtn.js"></script>
-      
-      <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
-    
-      
-
-    </body>
+     <script src="../js/mobileBtn.js"></script>
+     <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+  </body>
 </html>

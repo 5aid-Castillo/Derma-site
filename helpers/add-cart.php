@@ -25,7 +25,7 @@
 
         }else{
 
-            echo("<script>location.href = '../account.php';</script>");
+            echo("<script>location.href = '../account/account.php';</script>");
         }
     } 
 

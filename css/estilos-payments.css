@@ -1,3 +1,59 @@
+.payments{
+  margin-top: 5rem;
+}
+.confirmar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ok-btn{
+  align-items: center;
+  background-clip: padding-box;
+  background-color: black;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-oxxo:hover,
+.button-oxxo:focus {
+  background-color: rgb(81, 76, 76);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-oxxo:hover {
+  transform: translateY(-1px);
+}
+
+.button-oxxo:active {
+  background-color: #00c80d;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+
+/*  */
+
 .button-oxxo {
     align-items: center;
     background-clip: padding-box;
@@ -8,13 +64,14 @@
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
-    display: inline-flex;
+    /* display: inline-flex; */
+    display: block;
     font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     font-weight: 600;
     justify-content: center;
     line-height: 1.25;
-    margin: 0;
+    margin:auto;
     min-height: 3rem;
     padding: calc(.875rem - 1px) calc(1.5rem - 1px);
     position: relative;
@@ -23,7 +80,7 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    vertical-align: baseline;
+    /* vertical-align: baseline; */
     width: auto;
   }
   
@@ -41,4 +98,79 @@
     background-color: #00c80d;
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
+  }
+.button-transferencia {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: black;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    /* display: inline-flex; */
+    display:block;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: auto;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+   /*  vertical-align: baseline; */
+    width: auto;
+  }
+  
+  .button-transferencia:hover,
+  .button-transferencia:focus {
+    background-color: rgb(81, 76, 76);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+  
+  .button-transferencia:hover {
+    transform: translateY(-1px);
+  }
+  
+  .button-transferencia:active {
+    background-color: #00c80d;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+  }
+  
+  .buttons-payments{
+    display: grid;
+    place-items: center;
+    margin-top: 2rem;
+  } 
+  .method{
+    margin:1rem auto;
+  }
+.payments h2{
+  font-size: 16px;
+}
+  /* .method{
+    margin-top: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  } */
+
+
+  @media screen and (min-width:851px){
+    .payments{
+      margin-top: 2rem;
+    }
+    .indi{
+      margin-left: 1rem ;
+    }
   }

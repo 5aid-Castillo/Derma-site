@@ -78,10 +78,6 @@ if(@!$_SESSION['admin']){
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<!-- <a href="#" class="nav-link">Categories</a>
-			
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label> -->
 			
 			<a href="./admin.php" class="profile">
 				<img src="../assets/administrador.png">
@@ -91,7 +87,7 @@ if(@!$_SESSION['admin']){
 
 		<!-- MAIN -->
 		<main>
-			<div class="head-title">
+			<!-- <div class="head-title">
 				<div class="left">
 					<h1>Panel de Administrador</h1>
 					
@@ -100,71 +96,51 @@ if(@!$_SESSION['admin']){
 					<i class='bx bxs-cloud-download' ></i>
 					<span class="text">Agregar productos</span>
 				</a>
-			</div>
-
-			<!-- <ul class="box-info">
-				<li>
-					<i class='bx bxs-calendar-check' ></i>
-					<span class="text">
-						<h3>1020</h3>
-						<p>New Order</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-group' ></i>
-					<span class="text">
-						<h3>2834</h3>
-						<p>Visitors</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-dollar-circle' ></i>
-					<span class="text">
-						<h3>$2543</h3>
-						<p>Total Sales</p>
-					</span>
-				</li>
-			</ul> -->
+			</div> -->
 
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Pedidos recientes</h3>
-						<!-- <i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i> -->
+						<h3>Detalles</h3>
 					</div>
+                    <h5>Usuario: SAID</h5> <button>Ver detalles del envio</button>
+                    <br>
 
 					<table>
 						<thead>
 							<tr>
-								<th>Usuario</th>
-								<th>Pedido</th>
-								<th>Fecha</th>
+								<th>Producto</th>
+								<th>Precio</th>
+								<th>Promocion</th>
+                                <th>Fecha</th>
+								<th>Pago</th>
+								
 							</tr>
 						</thead>
 						<tbody>
 							<?php 
-									$query = mysqli_query($link,"SELECT * 
+							/* 		$query = mysqli_query($link,"SELECT * 
 									FROM productos 
 									INNER JOIN pedido 
 									ON productos.id_producto = pedido.id_producto
 									INNER JOIN usuarios 
 									ON pedido.id_usuario = usuarios.id_usuario");
-									while($row = mysqli_fetch_array($query)){
-										?>
-							<a href="#">
+									while($row = mysqli_fetch_array($query)){ */
+                                    
+                            ?>
+							
 							<tr>
 								<td>
-									<p><?php echo $row['usuario']?></p>
+									<p><?php echo $_GET['id_pedido']?></p>
 								</td>
-								<td><span class="status completed"><a href="./order.php?id_pedido=<?php echo $row['id_pedido']?>">Ver pedido</a></span></td>
 								<td>
-									<p><?php echo $row['fecha']?></p>
+									<p></p>
 								</td>
+								<td><span class="status completed"></span></td>
 							</tr>
-							</a>
-								 <?php }?>
+									
+								 <?php /* } */ ?>
 							<!-- <tr>
 								<td>
 									<img src="img/people.png">

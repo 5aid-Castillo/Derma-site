@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/assets/peladura.png" />
     <link rel="stylesheet" href="css/estilos-generales.css?v=2" />
-    <!-- <link rel="stylesheet" href="css/estilos-landing.css" /> -->
     <link rel="stylesheet" href="css/estilos-main.css?v=2" />
+    <linl rel="stylesheet" href="css/estilos-footer.css?v=2" />
     <link rel="stylesheet" href="./index.css?v=2" />
     <link
       rel="stylesheet"
@@ -52,16 +52,16 @@
               >
             </li>
             <li class="nav-menu-item-ss">
-              <a href="index.php#contacto" class="nav-menu-link-ss nav-link-ss"
-                >Contacto</a
+              <a href="./consulta.php" class="nav-menu-link-ss nav-link-ss"
+                >Consultas</a
               >
             </li>
-           
+           <!-- 
             <li class="nav-menu-item-ss">
               <a href="index.php#about" class="nav-menu-link-ss nav-link-ss"
                 >Nosotros</a
               >
-            </li>
+            </li> -->
             <li class="nav-menu-item-ss">
               <a href="redes.php" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a
@@ -88,7 +88,7 @@
           data-aos-anchor-placement="bottom-center"
           data-aos-duration="3000"
         >
-          Productos
+          Dermatologia
         </h1>
         <hr />
         <div class="p-1">
@@ -276,7 +276,7 @@
 
     <div class="chat">
       <a
-        href="https://wa.me/522212193377?text=Hola%20quiero%20saber%20más%20sobre%20sus%20servicios"
+        href="https://wa.me/522212193377?text=Hola!%20quiero%20saber%20más%20sobre%20sus%20servicios."
         class="btn-wsp"
         target="_blank"
       >
@@ -284,6 +284,12 @@
       </a>
     </div>
    
+ <!--    <footer class="footer-derma">
+      <small><a href="#">Aviso de privacidad</a></small>
+      <small><a href="#">Terminos y condiciones</a></small>
+      <small><a href="#">2023 universodetupiel</a></small>
+    </footer>
+ -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- AOS JS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

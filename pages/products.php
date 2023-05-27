@@ -112,7 +112,7 @@
                       <?php }?>
                    
                    
-                   <button class="button-buy" onclick="location.href='checkout.php?id_producto=<?php echo $row[0];?>'">Comprar</button>
+                   <button class="button-buy" onclick="send2($('#contador').val());return false;">Comprar</button>
                      
                   </div>
                               <br>
@@ -172,15 +172,15 @@
   <?php } ?>
     <!-- WhatsApp -->
 
-     <div class="chat">
+    <div class="chat">
       <a
-        href="https://api.whatsapp.com/send?phone=+51987654321"
+        href="https://wa.me/522212193377?text=Hola!%20quiero%20saber%20más%20sobre%20sus%20servicios."
         class="btn-wsp"
         target="_blank"
       >
         <i class="fa fa-whatsapp icono"></i>
       </a>
-    </div> 
+    </div>
 
    
    
@@ -205,6 +205,20 @@
           type:'post',
           success: function (response){
               location.href="../account/cart.php"
+          }
+        })
+      }
+      function send2(contador){
+        var count = {
+          "contador": contador
+
+        };
+        $.ajax({
+          data:count,
+          url:'../helpers/add-buy.php?id_producto=<?php echo $row[0]?>',
+          type:'post',
+          success:function(response){
+            location.href="../pages/checkout.php"
           }
         })
       }

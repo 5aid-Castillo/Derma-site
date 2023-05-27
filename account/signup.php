@@ -28,7 +28,14 @@ if(isset($_POST['sign__up'])){
           <a href="/" class="logo nav-link-ss">BeautyCoShop </a>
   
           <button class="nav-toggle" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="40"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+          </svg>
           </button>
           <div class="navbar-main">
             <ul class="nav-menu">

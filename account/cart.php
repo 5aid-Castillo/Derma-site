@@ -39,7 +39,7 @@ if(@!$_SESSION['user']){
         <div class="navbar-main">
           <ul class="nav-menu">
             <li class="nav-menu-item-ss">
-              <a href="../index.php#contacto" class="nav-menu-link-ss nav-link-ss"
+              <a href="../index.php" class="nav-menu-link-ss nav-link-ss"
                 >Inicio</a
               >
             </li>
@@ -149,7 +149,15 @@ if(@!$_SESSION['user']){
   </section>
 
 
-
+  <div class="chat">
+      <a
+        href="https://wa.me/522212193377?text=Hola!%20quiero%20saber%20más%20sobre%20sus%20servicios."
+        class="btn-wsp"
+        target="_blank"
+      >
+        <i class="fa fa-whatsapp icono"></i>
+      </a>
+    </div>
    
   
             

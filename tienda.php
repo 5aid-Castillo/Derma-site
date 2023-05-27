@@ -39,6 +39,12 @@
               >
             </li>
             <li class="nav-menu-item-ss">
+              <a href="./consulta.php" class="nav-menu-link-ss nav-link-ss"
+                >Consulta</a
+              >
+            </li>
+            
+            <li class="nav-menu-item-ss">
               <a href="index.php#contacto" class="nav-menu-link-ss nav-link-ss"
                 >Contacto</a
               >
@@ -102,7 +108,7 @@
         <div class="mainContent grid">
 
         <?php 
-            $result = $link-> query("SELECT * FROM productos ORDER BY rand() LIMIT 12") or die ($link->error);
+            $result = $link-> query("SELECT * FROM productos ORDER BY rand()") or die ($link->error);
             
             while($row = mysqli_fetch_array($result)){
           ?>
@@ -143,15 +149,15 @@
       
     <!-- WhatsApp -->
 
-     <div class="chat">
+    <div class="chat">
       <a
-        href="https://api.whatsapp.com/send?phone=+51987654321"
+        href="https://wa.me/522212193377?text=Hola,%20tengo%20una%20duda%20sobre%20sus%20productos."
         class="btn-wsp"
         target="_blank"
       >
         <i class="fa fa-whatsapp icono"></i>
       </a>
-    </div> 
+    </div>
 
    <script src="js/mobileBtn.js"></script>
     <script src="js/carrito.js"></script> 
