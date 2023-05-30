@@ -13,8 +13,7 @@
     while($row = mysqli_fetch_array($query)){
         $pedido = $row['id_producto'];
         $cantidad = $row['cantidad'];
-        $date = strtotime();
-        $fecha = date('M d, Y', $date);
+       
     mysqli_query($link,"INSERT INTO pedido VALUES(NULL,'Oxxo','$pedido','$id_user','$cantidad',CURDATE())");
     }
     mysqli_query($link, "DELETE FROM carrito WHERE id_usuario = '$id_user'");

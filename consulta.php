@@ -8,18 +8,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/logo.png"/>
+    
     <link rel="stylesheet" href="css/estilos-generales.css?v=2" />
     <link rel="stylesheet" href="css/estilos-consulta.css?v=2" />
     <link rel="stylesheet" href="css/estilos-main.css?v=2" />
    
     <link rel="stylesheet" href="./index.css?v=2" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,600&display=swap" rel="stylesheet">
     
-    <title>Tienda</title>
+    <title>Consulta</title>
   </head>
   <body>
     <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link-ss">MxSkinCare </a>
+        <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
           <!-- <i class="fas fa-bars"></i> -->
@@ -41,7 +46,7 @@
             </li>
             <li class="nav-menu-item-ss">
               <a href="./consulta.php" class="nav-menu-link-ss nav-link-ss"
-                >Consultas</a
+                >Consulta</a
               >
             </li>
             <li class="nav-menu-item-ss">
@@ -79,6 +84,7 @@
 
          <h4 align="center">Realiza tu registro para obtener una consulta en linea o agendar tu cita de manera presencial</h4>
          <p align="center"><strong>Nota:</strong> Para acceder al registro de consulta en linea debes registrar una cuenta de usuario o acceder a una: <a style="color:orangered;font-weight:bold" href="account/account.php">Aqui</a></p>
+         <p align="center" style="color:green"><strong style="color:black">Precio de consulta:&nbsp;</strong>$700</p>
          
          <div class="btn-r" >
            <button class="button-rgs" onclick="location.href='./helpers/validate2.php'">Consulta en Linea</button>

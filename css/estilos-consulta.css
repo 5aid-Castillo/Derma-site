@@ -111,6 +111,13 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.presencial{
+  margin-top: 4rem;
+}
+.presencial p{
+  font-size: 1.5rem;
+  margin: 1rem;
+}
 @media screen and (min-width:851px){
     .consulta h2{
         margin-top: 2rem;
@@ -121,5 +128,18 @@
     .confirm{
       margin-top: 1rem;
     }
+    .presencial{
+      margin-top: 1rem;
+    }
     
+}
+
+
+.confi{
+  margin-top: 5rem;
+}
+@media screen and (min-width:851px){
+  .confi{
+    margin-top: 1rem;
+  }
 }

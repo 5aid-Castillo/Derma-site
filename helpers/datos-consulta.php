@@ -19,8 +19,8 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
     $vacuna = $_POST['vacuna'];
     $cita = $_POST['cita'];
 
-    mysqli_query($link,"INSERT INTO consulta VALUES(null,'$imagen','$edad','$telefono','$enfermedades','$medicamentos','$antecedentes','$alergias','$motivo','$tratamiento','$vacuna','$cita','$id_user')");
-    echo("<script>location.href= '../pages/confirmacion.php'; </script>");
+    mysqli_query($link,"INSERT INTO consulta VALUES(null,'$imagen','$edad','$telefono','$enfermedades','$medicamentos','$antecedentes','$alergias','$motivo','$tratamiento','$vacuna','$cita','Ninguno',CURDATE(),'$id_user')");
+    echo("<script>location.href= '../pages/p-consulta.php'; </script>");
 } else{
     echo("<script>location.href= '../consulta.php'; </script>");
 }

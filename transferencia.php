@@ -14,18 +14,22 @@ if(@!$_SESSION['user']){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!--  <script src="https://sdk.mercadopago.com/js/v2"></script> -->
+    
+    <link rel="icon" type="image/png" href="./assets/logo.png"/>
     <link rel="stylesheet" href="css/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/estilos-generales.css?v=2">
     <link rel="stylesheet" href="css/estilos-payments.css?v=2">
     <link rel="stylesheet" href="index.css?v=2">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,600&display=swap" rel="stylesheet">
 
-    <title>Carrito</title>
+
+    <title>Transferencia</title>
 </head>
 <body>
 <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link-ss">BeautyCoShop </a>
+        <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
          
@@ -43,6 +47,11 @@ if(@!$_SESSION['user']){
             <li class="nav-menu-item-ss">
               <a href="./index.php" class="nav-menu-link-ss nav-link-ss"
                 >Inicio</a>
+            </li>
+            <li class="nav-menu-item-ss">
+              <a href="./consulta.php" class="nav-menu-link-ss nav-link-ss"
+                >Consulta</a
+              >
             </li>
             <li class="nav-menu-item-ss">
               <a href="./index.php#contacto" class="nav-menu-link-ss nav-link-ss"
@@ -76,20 +85,55 @@ if(@!$_SESSION['user']){
 
     <section class="payments">
     <p class="indi">Realiza la transferencia a este numero de cuenta con la cantidad total de tu pedido e ingresa el numero de referencia para poder identificar que has realizado correctamente tu pago.
-        No olvides conservar una captura 
+        No olvides conservar una captura de tu comprobante de pago. 
     </p>
-    <div>
-        <p></p>
-</div>
-    <strong>Una vez que realices la transferencia, presiona </strong>
-    
+    <div class="data-transfer">
+        <?php 
+          $id_user = $_SESSION['idu'];
+          
+          $query = mysqli_query($link,"SELECT * FROM cuenta");
+          $data = mysqli_fetch_array($query);
+        ?>
+        <p align="center"><strong>Cuenta:</strong><?php echo $data['cuenta']?></p>
+        <p align="center"><strong>Titular:</strong><?php echo $data['titular']?></p>
+        <p align="center"><strong>Banco:</strong><?php echo $data['banco']?></p>
+
+        <?php 
+          if(isset($_GET['id_producto'])){
+            
+
+
+            $sql = mysqli_query($link,"SELECT * FROM directo WHERE id_usuario = '$id_user' ORDER BY id_compra DESC LIMIT 1");
+            $res = mysqli_fetch_array($sql);
+          ?>
+            <p align="center" style="color:green"><strong style="color:black">Total a pagar:</strong>$ <?php echo $res['tot'];?></p>
+        <?php 
+          }else{
+            
+            $sql2 = mysqli_query($link,"SELECT SUM(subtotal_cart) as mtotal FROM carrito WHERE id_usuario = $id_user");
+            $res2 = mysqli_fetch_array($sql2);
+            ?>
+            <p align="center" style="color:green"><strong style="color:black">Total a pagar:</strong>$ <?php echo $res2['mtotal']?></p>
+          <?php   
+          }
+          ?>
+        <style></style>
+    </div>
+
+      
+    <p align="center"><strong >Una vez que realices la transferencia, envia el comprobante de transferencia aqui:</strong></p>
+    <div class="btn-send-transfer">
+      <a type="button" class="btn btn-success" href="https://wa.me/522212193377?text=Hola!%20Realice%20una%20consulta%20en%20linea%20y%20este%20es%20mi%20comprobante%20de%20pago." target="_blank">Enviar comprobante</a>
+          <style>.btn-send-transfer{display:flex;align-items:center;justify-content:center; margin-top:1.2rem;flex-direction:column} </style>
+          <button type="button" class="btn btn-danger" style="margin-top:1.2rem;" onclick="location.href='./index.php'">Salir</button>
+    </div>
 
     </section>
 
 <!-- =============================== -->
 
-    <script src="../js/mobileBtn.js"></script>
-    <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="js/mobileBtn.js"></script>
+    <script src="css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
     
     </body>
 </html>

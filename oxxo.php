@@ -11,70 +11,7 @@ if(@!$_SESSION['user']){
 require_once("./conekta-pay/lib/Conekta.php");
 include('./admin/get-keys.php');
 
-/* ========================= Compra directa  ==============================*/
-if($_SESSION['producto']){
-  $id_user = $_SESSION['idu']; 
-/* Consultas para mostrar en oxxo pay */
-$product = $_SESSION['producto'];
 
-$cookie_order = mysqli_query($link,"SELECT MAX(directo.id_compra), directo * FROM directo WHERE id ")
-/* $cookie_order = mysqli_query($link,"SELECT * FROM productos WHERE id_producto = '$product'");
-$cook = mysqli_fetch_array($cookie_order);
-
-$usuario = mysqli_query($link,"SELECT * FROM usuarios WHERE id_usuario = '$id_user'");
-$result = mysqli_fetch_array($usuario); */
-/* Aqui termina */
-try{
-  $thirty_days_from_now = (new DateTime())->add(new DateInterval('P30D'))->getTimestamp();
-
-  $order = \Conekta\Order::create(
-    [
-      "line_items" => [
-        [
-          "name" => "Pedido",
-          "unit_price" => $cook['precio']*100,
-          "quantity" => 1
-        ]
-        ],
-        "shipping_lines" =>[
-          [
-            "amount" => 0,
-            "carrier" => "FEDEX"
-          ]
-          ],
-        "currency" => "MXN",
-        "customer_info" =>[
-          "name" => $result['usuario'],
-          "phone" => "2212054136",
-          "email" => $result['correo']
-        ],
-        "charges" =>[
-          [
-            "payment_method" => [
-              "type" => "oxxo_cash",
-              "expires_at" => $thirty_days_from_now
-            ]
-          ]
-            ],
-        "shipping_contact" => [
-            "address"=> [
-              "street1" => "250 address",
-              "postal_code" => "98121",
-              "country" => "MX"
-            ]
-            ]
-      
-    ]
-          );
-         /*  var_dump(json_decode($order)); */
-}catch(\Conekta\ParameterValidationError $error){
-  echo $error->getMessage();
-}catch(\Conekta\Handler $error){
-  echo $error->getMessage();
-}
-
-
-}else{
 /*===================================== Carrito de compras =================================================*/
 $id_user = $_SESSION['idu']; 
 /* Consultas para mostrar en oxxo pay */
@@ -86,6 +23,9 @@ $total = mysqli_fetch_array($query2);
 
 $query3 = mysqli_query($link,"SELECT * FROM usuarios WHERE id_usuario = $id_user");
 $res = mysqli_fetch_array($query3);
+
+$query4 = mysqli_query($link,"SELECT * FROM datos WHERE id_usuario = $id_user ORDER BY id_dato DESC LIMIT 1");
+$data = mysqli_fetch_array($query4);
 
 /* Aqui termina */
 try{
@@ -109,7 +49,7 @@ try{
         "currency" => "MXN",
         "customer_info" =>[
           "name" => $res['usuario'],
-          "phone" => "2212054136",
+          "phone" => $data['telefono'],
           "email" => $res['correo']
         ],
         "charges" =>[
@@ -122,8 +62,8 @@ try{
             ],
         "shipping_contact" => [
             "address"=> [
-              "street1" => "250 address",
-              "postal_code" => "98121",
+              "street1" => $data['calle'],
+              "postal_code" => $data['cp'],
               "country" => "MX"
             ]
             ]
@@ -137,7 +77,7 @@ try{
   echo $error->getMessage();
 }
 /* Fin conekta */
-}
+
 ?>
 <html lang="en">
 <head>
@@ -145,22 +85,24 @@ try{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!--  <script src="https://sdk.mercadopago.com/js/v2"></script> -->
-    <link rel="stylesheet" href="css/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
 		<link href="./opps_es_files/styles.css?v=2" media="all" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="./assets/logo.png"/> 
+    <link rel="stylesheet" href="css/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
 		<link href="file:///Users/lizbethgamez/Downloads/oxxopay-payment-stub-master/demo/css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos-generales.css?v=2">
     <link rel="stylesheet" href="css/estilos-payments.css?v=2">
     <link rel="stylesheet" href="index.css?v=2">
- <!--   <script src="https://sdk.mercadopago.com/js/v2"></script>
-  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,600&display=swap" rel="stylesheet"> 
+
+ 
         
-    <title>Carrito</title>
+    <title>Pago con Oxxo</title>
 </head>
 <body>
 <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link-ss">BeautyCoShop </a>
+        <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
          
@@ -178,6 +120,11 @@ try{
             <li class="nav-menu-item-ss">
               <a href="./index.php" class="nav-menu-link-ss nav-link-ss"
                 >Inicio</a>
+            </li>
+            <li class="nav-menu-item-ss">
+              <a href="./consulta.php" class="nav-menu-link-ss nav-link-ss"
+                >Consulta</a
+              >
             </li>
             <li class="nav-menu-item-ss">
               <a href="./index.php#contacto" class="nav-menu-link-ss nav-link-ss"
@@ -214,9 +161,11 @@ try{
     
     <!-- <p class="indi">Presiona el botón de confirmar una vez que guardés el número de referencia para que tu pago se haga válido y obtengamos tu información.</p>
      --><div class="confirmar">
-      <button class="ok-btn" onclick="location.href='./helpers/add-oxxo-order.php'">Finalizar Pedido</button>  
+         <button class="ok-btn" onclick="location.href='./helpers/add-oxxo-order.php'">Finalizar Pedido</button>  
     </div>   
     <div class="opps">
+    <!-- <style>.opps{width: 90vw !important;}</style> -->
+
 			<div class="opps-header">
 				<div class="opps-reminder"> Fecha digital con limite de pago: 3 dias a partir de ahora</div>
 				<div class="opps-info">
@@ -251,8 +200,8 @@ try{
 
 <!-- =============================== -->
 
-    <script src="../js/mobileBtn.js"></script>
-    <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <script src="./js/mobileBtn.js"></script>
+    <script src="css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
     
     </body>
 </html>

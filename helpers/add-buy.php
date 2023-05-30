@@ -16,9 +16,9 @@
             $total = $price * $contador;
 
             mysqli_query($link,"INSERT INTO directo VALUES(NULL,'$contador','$total','$id_user','$producto')");
-            $_SESSION['producto'] =$producto;
-            echo("<script>location.href = '../pages/checkout.php';</script>");
             
+    /*         echo("<script>location.href = '../pages/checkout.php';</script>");
+     */         
     }else{
         echo("<script>location.href = '../account/account.php';</script>");
             

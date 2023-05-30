@@ -11,19 +11,21 @@ if(@!$_SESSION['user']){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" type="image/png" href="../assets/logo.png"/>
     <link rel="stylesheet" href="../css/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/estilos-generales.css?v=2">
     <link rel="stylesheet" href="../css/estilos-account.css?v=2">
     <link rel="stylesheet" href="../css/estilos-carrito.css?v=2">
     <link rel="stylesheet" href="../index.css?v=2">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,600&display=swap" rel="stylesheet">
+
     <title>Carrito</title>
 </head>
 <body>
 <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link-ss">BeautyCoShop </a>
+        <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
           <!-- <i class="fas fa-bars"></i> -->
@@ -41,6 +43,11 @@ if(@!$_SESSION['user']){
             <li class="nav-menu-item-ss">
               <a href="../index.php" class="nav-menu-link-ss nav-link-ss"
                 >Inicio</a
+              >
+            </li>
+            <li class="nav-menu-item-ss">
+              <a href="../consulta.php" class="nav-menu-link-ss nav-link-ss"
+                >Consulta</a
               >
             </li>
             <li class="nav-menu-item-ss">
@@ -63,7 +70,7 @@ if(@!$_SESSION['user']){
               <a href="../tienda.php" class="nav-menu-link-ss nav-link-ss">Tienda</a>
             </li>
             <li class="nav-menu-item-ss">
-              <a href="../account/account.php" class="nav-link-ss">
+              <a href="./account.php" class="nav-link-ss">
                 <img src="../assets/usuario.png" class="icon" alt="user" />
               </a>
             </li>

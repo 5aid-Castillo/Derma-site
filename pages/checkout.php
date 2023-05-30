@@ -1,6 +1,7 @@
 <?php 
     include('../db/connect_db.php');
     session_start();  
+   
     if(@!$_SESSION['user']){
       echo("<script>location.href = '../account/login.php';</script>");
     } 
@@ -14,18 +15,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="../assets/logo.png"/>
     <link rel="stylesheet" href="../css/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/estilos-generales.css?v=2" />
     <link rel="stylesheet" href="../css/estilos-producto.css?v=2" />
     <link rel="stylesheet" href="../css/estilos-checkout.css?v=2" />
     <link rel="stylesheet" href="../index.css?v=2" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,600&display=swap" rel="stylesheet">
+
     
-    <title>Tienda</title>
+    <title>Datos para envio</title>
   </head>
   <body>
     <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link-ss">BeautyCoShop </a>
+        <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
           <!-- <i class="fas fa-bars"></i> -->
@@ -43,6 +48,11 @@
             <li class="nav-menu-item-ss">
               <a href="../index.php#contacto" class="nav-menu-link-ss nav-link-ss"
                 >Inicio</a
+              >
+            </li>
+            <li class="nav-menu-item-ss">
+              <a href="../consulta.php" class="nav-menu-link-ss nav-link-ss"
+                >Consulta</a
               >
             </li>
             <li class="nav-menu-item-ss">
@@ -74,12 +84,13 @@
     </header>
 
     <section class="checkout">
-  <form action="../helpers/form-pay.php" class="form-reg" method="POST">
+  <form action="" class="form-reg" method="POST">
     <?php
        /* $_COOKIE['id_producto'] = $_GET['id_producto'];  */
-       if(isset($_GET['id_producto'])){
+       /* if(isset($_GET['id_producto'])){
       $_SESSION['producto'] = $_GET['id_producto'];
-       } 
+       } */
+       include('../helpers/form-pay.php'); 
     ?>
 
       <h1 class="text-center">Ingresa los siguientes datos para envio de tu pedido.</h1>
@@ -160,8 +171,9 @@
      
       <div class="btns-group">
         <a href="#" class="btn-rgs btn-prev ">Regresar</a>
-        <input type="submit" value="Enviar" name="send" class="btn-send btn-rgs"/>
-      </div>
+         <input type="submit" value="Enviar" name="send" class="btn-send btn-rgs"/>
+         
+        </div>
     </div>
   </form>
 </section>

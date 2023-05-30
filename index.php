@@ -8,7 +8,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/assets/peladura.png" />
+    <link rel="icon" type="image/png" href="./assets/logo.png"/>
+    
     <link rel="stylesheet" href="css/estilos-generales.css?v=2" />
     <link rel="stylesheet" href="css/estilos-main.css?v=2" />
     <linl rel="stylesheet" href="css/estilos-footer.css?v=2" />
@@ -18,20 +19,25 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,600&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+<script
       src="https://kit.fontawesome.com/7e5b2d153f.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
    
-    <title>BeautyCoShop</title>
+    <title>Universodetupiel</title>
   </head>
   <body>
     <!-- <div class="blur"></div> -->
     <!-- Inicio de barra de navegacion -->
     <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link-ss">Beauty </a>
+        
+        <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
+        
 
         <button class="nav-toggle" aria-label="Abrir menú">
           <!-- <i class="fas fa-bars"></i> -->
@@ -53,7 +59,7 @@
             </li>
             <li class="nav-menu-item-ss">
               <a href="./consulta.php" class="nav-menu-link-ss nav-link-ss"
-                >Consultas</a
+                >Consulta</a
               >
             </li>
            <!-- 
@@ -81,21 +87,31 @@
       </nav>
     </header>
       
+    <div class="logo-un">
+      <div class="overlay-init"></div>
+      <img src="./img/imgs-landing/prod6.jpg" alt="landing" class="img-init-1">
+          <div class="initContent container">
+            <div class="initImage">
+              <img src="./assets/logo.png" alt="logo" style="width:200px;heigth:200px">
+            </div>
+            <i class='bx bxs-chevron-down bx-lg bx-fade-up'></i>
+            <i class='bx bxs-chevron-down bx-lg bx-fade-up'></i>
+          </div>
+    </div>
+    
     <section class="section main">
+
       <div class="title">
         <h1
-          data-aos="fade-up"
-          data-aos-anchor-placement="bottom-center"
-          data-aos-duration="3000"
+       
+
         >
           Dermatologia
         </h1>
-        <hr />
+    <!--     <hr /> -->
         <div class="p-1">
           <p
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-center"
-            data-aos-duration="3000"
+          
           >
             Encuentra productos para el cuidado de la piel, pero si busca
             respuesta sobre el cuidado de su piel, consulta a un especialista
@@ -103,9 +119,9 @@
           <button
             class="button-p"
             role="button"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-center"
-            data-aos-duration="3000"
+           
+
+
             onclick="location.href='consulta.php'"
           >
             ¡Consultar Aquí!
@@ -113,7 +129,7 @@
         </div>
       </div>
       <img
-        data-aos="fade-up"
+      data-aos="fade-up"
         data-aos-duration="3000"
         src="./img/imgs-landing/banner-landing.jpg"
         alt="landing"
@@ -123,7 +139,7 @@
     <section class="section full-lg-screen">
       <div class="popular">
         <article class="care">
-          <p data-aos="fade-up" data-aos-duration="3000">Productos Populares</p>
+          <p data-aos="fade-up" data-aos-duration="3000">Productos Especiales</p>
         </article>
         <article class="care1">
           <p data-aos="fade-up" data-aos-duration="3000">
@@ -133,33 +149,73 @@
       </div>
       <div class="popular-img">
         <div class="img-2">
+          <a href="#">
+          <div class="categories">
+            <div class="overlay"></div> 
           <img
-            src="./img/cosmetics2.jpeg"
+            src="./img/facial.jpg"
             alt=""
-            data-aos="fade-up"
-            data-aos-duration="3000"
+           
           />
-          <img
-            src="./img/111.jpg"
-            alt=""
-            data-aos="fade-up"
-            data-aos-duration="3000"
-          />
+          <div class="indexContent container">
+             <div class="indexText">
+                <h1 class="title-ind">Facial</h1>
+             </div>    
+          </div>
         </div>
+        </a>
+          
+        <a href="#">
+        <div class="categories">
+            <div class="overlay"></div> 
+          <img
+            src="./img/cuerpo.jpg"
+            alt=""
+          
+          />
+          <div class="indexContent container">
+             <div class="indexText">
+                <h1 class="title-ind">Corporal</h1>
+             </div>    
+          </div>
+        </div>
+        </a>
+        </div>
+        
         <div class="img-2">
+        <a href="#">
+        <div class="categories">
+            <div class="overlay"></div> 
           <img
-            src="./img/cosmetic.jpg"
+            src="./img/cabello.jpg"
             alt=""
-            data-aos="fade-up"
-            data-aos-duration="3000"
+            
           />
-          <img
-            src="./img/cosm.jpg"
-            alt=""
-            data-aos="fade-up"
-            data-aos-duration="3000"
-          />
+          <div class="indexContent container">
+             <div class="indexText">
+                <h1 class="title-ind">Cabello</h1>
+             </div>    
+          </div>
         </div>
+        </a>
+          
+        <a href="#">
+        <div class="categories">
+            <div class="overlay"></div> 
+          <img
+            src="./img/nutraceuticos.jpg"
+            alt=""
+            
+          />
+          <div class="indexContent container">
+             <div class="indexText">
+                <h1 class="title-ind">Nutracéuticos</h1>
+             </div>    
+          </div>
+        </div>
+        </a> 
+        </div>
+        
       </div>
       <center class="btn-go">
         <button class="button-go" onclick="location.href='tienda.php'">Ver productos</button>
