@@ -25,7 +25,7 @@ if(@!$_SESSION['user']){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
    
 
-    <title>Transferencia</title>
+    <title>Pago realizado</title>
 </head>
 <body>
 <header class="header">
@@ -84,56 +84,19 @@ if(@!$_SESSION['user']){
     </header>
     
 
-    <section class="payments">
-    <p class="indi">Realiza la transferencia a este numero de cuenta con la cantidad total de tu pedido e ingresa el numero de referencia para poder identificar que has realizado correctamente tu pago.
-        No olvides conservar una captura de tu comprobante de pago. 
-    </p>
-    <div class="data-transfer">
-        <?php 
-          $id_user = $_SESSION['idu'];
-          
-          $query = mysqli_query($link,"SELECT * FROM cuenta");
-          $data = mysqli_fetch_array($query);
-        ?>
-        <p align="center"><strong>Cuenta:</strong><?php echo $data['cuenta']?></p>
-        <p align="center"><strong>Titular:</strong><?php echo $data['titular']?></p>
-        <p align="center"><strong>Banco:</strong><?php echo $data['banco']?></p>
+    <section class="thankyou">
+    <h4 align="center">Gracias por realizar tu pago, atenderemos tu pedido en seguida para hacerte llegar tus productos. 
+</h4>
 
-        <?php 
-          if(isset($_GET['id_producto'])){
-            
+<div class="icons-check" style="display:flex; align-items:center;justify-content:center;flex-direction:column">
+ <img src="./assets/senal-aprobada.png" alt="check" style="width:100px; heigth: 100px;margin-top:1.5rem">
 
+ <button type="button" onclick="location.href='./account/order.php'" class="btn btn-success btn-lg" style="margin-top:2rem;">Entendido</button>
+</div>
 
-            $sql = mysqli_query($link,"SELECT * FROM directo WHERE id_usuario = '$id_user' ORDER BY id_compra DESC LIMIT 1");
-            $res = mysqli_fetch_array($sql);
-          ?>
-            <p align="center" style="color:green"><strong style="color:black">Total a pagar:</strong>$ <?php echo $res['tot'];?></p>
-        <?php 
-          }else{
-            
-            $sql2 = mysqli_query($link,"SELECT SUM(subtotal_cart) as mtotal FROM carrito WHERE id_usuario = $id_user");
-            $res2 = mysqli_fetch_array($sql2);
-            ?>
-            <p align="center" style="color:green"><strong style="color:black">Total a pagar:</strong>$ <?php echo $res2['mtotal']?></p>
-          <?php   
-          }
-          ?>
-        <style></style>
-    </div>
 
       
-    <p align="center"><strong >Una vez que realices la transferencia, envia el comprobante de transferencia aqui:</strong></p>
-    <div class="btn-send-transfer">
-      <?php if(isset($_GET['id_producto'])){?>
-      <a type="button" class="btn btn-success" href="./helpers/add-transfer-pay.php" target="_blank">Enviar comprobante</a>
-      <?php } else{ ?>
-        
-      <a type="button" class="btn btn-success" href="./helpers/add-transfer.php" target="_blank">Enviar comprobante</a>
-       <?php }?>   
-      <style>.btn-send-transfer{display:flex;align-items:center;justify-content:center; margin-top:1.2rem;flex-direction:column} </style>
-          
-          <button type="button" class="btn btn-danger" style="margin-top:1.2rem;" onclick="location.href='./index.php'">Salir</button>
-    </div>
+   
 
     </section>
 

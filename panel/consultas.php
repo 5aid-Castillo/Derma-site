@@ -10,13 +10,13 @@ if(@!$_SESSION['admin']){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>Productos -Panel</title>
+	<title>Consultas -Panel</title>
 </head>
 <body>
 
@@ -24,7 +24,7 @@ if(@!$_SESSION['admin']){
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="./index.php" class="brand">
-			<i class='bx bxs-smile'></i>
+			<i class='bx bxs-sun'></i>
 			<span class="text">Universodetupiel</span>
 		</a>
 		<ul class="side-menu top">
@@ -40,19 +40,18 @@ if(@!$_SESSION['admin']){
 					<span class="text">Pedidos</span>
 				</a>
 			</li>
-			<li>
-				<a href="#">
+			<li class="active">
+				<a href="./consultas.php">
 					<i class='bx bxs-user-voice' ></i>
 					<span class="text">Consultas</span>
 				</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="./productos.php">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">Mis Productos</span>
 				</a>
 			</li>
-			
 			<li >
 				<a href="./message.php">
 					<i class='bx bxs-message-dots' ></i>
@@ -80,8 +79,12 @@ if(@!$_SESSION['admin']){
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
+			<!-- <a href="#" class="nav-link">Categories</a>
 			
-			<a href="./index.php" class="profile">
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label> -->
+			
+			<a href="./admin.php" class="profile">
 				<img src="../assets/administrador.png">
 			</a>
 		</nav>
@@ -91,89 +94,47 @@ if(@!$_SESSION['admin']){
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Mis productos</h1>
+					<h1>Consultas</h1>
 					
 				</div>
-				 <a href="./add-products.php" class="btn-download" style="background: #5cb85c !important;">
-					<i class='bx bxs-add-to-queue' ></i>
-					<span class="text">Agregar nuevo producto</span>
-				</a> 
 			</div>
 
-		
-
+			
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Lista de productos</h3>
-						
+						<h3>Consultas agendadas</h3>
+			
 					</div>
-
 					<table>
 						<thead>
-							<tr>								
-
-								<th>Producto</th>
-								<th>Categoria</th>
-								<th>Detalles</th>
+							<tr>
+								<th>Nombre</th>
+                                <th>Fecha</th>
+                                <th>Detalles</th>
                                 
 								
+                                
 							</tr>
 						</thead>
 						<tbody>
-							<?php 
-							$query = mysqli_query($link,"SELECT * FROM productos");
-							while($data = mysqli_fetch_array($query)){
-
-							?>
-						
+                            <?php
+                                $query = $link-> query("SELECT * FROM consulta INNER JOIN usuarios ON consulta.id_usuario = usuarios.id_usuario WHERE estatus != 'Ninguno'");
+                                while($row = mysqli_fetch_array($query)){
+                            ?>
 							<tr>
 								<td>
-									<p><?php echo $data['producto']?></p>
+									<!-- <img src="img/people.png"> -->
+									<p><?php echo $row['usuario']?></p>
 								</td>
-								<td>
-									<p><?php echo $data['categoria']?></p>
-								</td>
-								<td><span class="status completed"><a href="./product-details.php?id_producto=<?php echo $data['id_producto'];?>">Detalles</a></span></td>
+								<td><?php echo $row['correo']?></td>
+								<td><span class="status completed"><a href="./detalles-consulta.php?id_consulta=<?php echo $row['id_consulta'];?>">Detalles</a></span></td>
+                                
 							</tr>
-							<?php }?>
-								 
-							<!-- <tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr> -->
+                            <?php } ?>
 						</tbody>
 					</table>
-					
 				</div>
 				
 			</div>
@@ -184,6 +145,5 @@ if(@!$_SESSION['admin']){
 	
 
 	<script src="script.js"></script>
-	
 </body>
 </html>

@@ -164,6 +164,10 @@
     flex-wrap: wrap;
     
   } */
+  .thankyou{
+    margin-top: 4rem;
+  }
+
 
 
   @media screen and (min-width:851px){
@@ -173,4 +177,12 @@
     .indi{
       margin-left: 1rem ;
     }
+    .thankyou{
+      margin-top: 1.8rem;
+    }
+  
   }
+
+
+  
+  

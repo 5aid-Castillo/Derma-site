@@ -340,12 +340,7 @@
       </a>
     </div>
    
- <!--    <footer class="footer-derma">
-      <small><a href="#">Aviso de privacidad</a></small>
-      <small><a href="#">Terminos y condiciones</a></small>
-      <small><a href="#">2023 universodetupiel</a></small>
-    </footer>
- -->
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- AOS JS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

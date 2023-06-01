@@ -41,7 +41,7 @@ if(@!$_SESSION['admin']){
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="./consultas.php">
 					<i class='bx bxs-user-voice' ></i>
 					<span class="text">Consultas</span>
 				</a>
@@ -96,8 +96,8 @@ if(@!$_SESSION['admin']){
 					<h1>Panel de Administrador</h1>
 					
 				</div>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
+				<a href="./add-products.php" class="btn-download">
+					<i class='bx bxs-add-to-queue' ></i>
 					<span class="text">Agregar productos</span>
 				</a>
 			</div>

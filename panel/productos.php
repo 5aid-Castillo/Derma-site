@@ -10,7 +10,7 @@ if(@!$_SESSION['admin']){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
@@ -80,14 +80,7 @@ if(@!$_SESSION['admin']){
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<!-- <a href="#" class="nav-link">Categories</a>
 			
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label> -->
-			<!--  <a href="#" class="notification">
-				<i class='bx bxs-bell' ></i>
-				<span class="num">8</span>
-			</a>  -->
 			<a href="./index.php" class="profile">
 				<img src="../assets/administrador.png">
 			</a>
@@ -101,66 +94,86 @@ if(@!$_SESSION['admin']){
 					<h1>Mis productos</h1>
 					
 				</div>
-				<!-- <a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Selecciona la funcion a realizar</span>
-				</a> -->
+				 <a href="./add-products.php" class="btn-download" style="background: #5cb85c !important;">
+					<i class='bx bxs-add-to-queue' ></i>
+					<span class="text">Agregar nuevo producto</span>
+				</a> 
 			</div>
 
-			<!-- <ul class="box-info">
-				<li>
-					<i class='bx bxs-calendar-check' ></i>
-					<span class="text">
-						<h3>1020</h3>
-						<p>New Order</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-group' ></i>
-					<span class="text">
-						<h3>2834</h3>
-						<p>Visitors</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-dollar-circle' ></i>
-					<span class="text">
-						<h3>$2543</h3>
-						<p>Total Sales</p>
-					</span>
-				</li>
-			</ul> -->
+		
 
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Selecciona la funcion a realizar</h3>
+						<h3>Lista de productos</h3>
 						
 					</div>
-					<ul class="box-info">
-                        <li>
-                    <a href="./add-products.php">
-					<!-- <i class='bx bxs-calendar-check' ></i> -->
-                    <i class='bx bx-heart'></i>
-					<span class="text">
-						<!-- <h3>1020</h3> -->
-						<p>Productos</p>
-					</span>
-                </a>
-				</li>
-				
-            <li>
-                    <a href="./add-promocion.php">
-					<i class='bx bxs-dollar-circle' ></i>
-					<span class="text">
-						<!-- <h3>$2543</h3> -->
-						<p>Promociones</p>
-					</span>
 
-                </a>
-				</li>
-			</ul>
+					<table>
+						<thead>
+							<tr>								
+
+								<th>Producto</th>
+								<th>Categoria</th>
+								<th>Detalles</th>
+                                
+								
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+							$query = mysqli_query($link,"SELECT * FROM productos");
+							while($data = mysqli_fetch_array($query)){
+
+							?>
+						
+							<tr>
+								<td>
+									<p><?php echo $data['producto']?></p>
+								</td>
+								<td>
+									<p><?php echo $data['categoria']?></p>
+								</td>
+								<td><span class="status completed"><a href="./product-details.php?id_producto=<?php echo $data['id_producto'];?>">Detalles</a></span></td>
+							</tr>
+							<?php }?>
+								 
+							<!-- <tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status process">Process</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr> -->
+						</tbody>
+					</table>
+					
 				</div>
 				
 			</div>
@@ -171,5 +184,6 @@ if(@!$_SESSION['admin']){
 	
 
 	<script src="script.js"></script>
+	
 </body>
 </html>

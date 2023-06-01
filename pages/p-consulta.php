@@ -94,7 +94,7 @@
         <p class="method">Paga en efectivo con <img src="../assets/oxxo.png" alt="oxxo image" style="width:35px; height:25px"/></p>
             <button class="button-oxxo" onclick="location.href='../oxxo-pay-consulta.php'">Pagar en efectivo</button>
             <p class="method">Paga con transferencia<img src="../assets/transferencia.png" alt="transferencia" style="width:35px; height:25px"/></p>
-            <button class="button-transferencia " onclick="location.href='../transferencia.php'">Pagar con transferencia</button>
+            <button class="button-transferencia " onclick="location.href='../transferencia-consulta.php'">Pagar con transferencia</button>
             
         </div>
         

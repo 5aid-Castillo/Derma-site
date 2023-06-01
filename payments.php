@@ -6,6 +6,7 @@ if(@!$_SESSION['user']){
   echo("<script>location.href = './account/login.php';</script>");
 }
 
+
 ?>
 <html lang="en">
 <head>
@@ -100,12 +101,56 @@ if(@!$_SESSION['user']){
             <button class="button-transferencia " onclick="location.href='./transferencia.php'">Pagar con transferencia</button>
             
           <?php  } ?>
-            <p class="method">Paga con mercado pago</p>
+            <p class="method">Paga con Paypal</p>
+            <div id="paypal-button-container"></div>
+            <!-- Replace "test" with your own sandbox Business account app client ID -->
+            
+            
           </div>
+          
+        </section>
+
+        <?php 
+          $id_user = $_SESSION['idu'];
+            if(isset($_GET['id_producto'])){
+              $sql = mysqli_query($link,"SELECT * FROM directo WHERE id_usuario = '$id_user' ORDER BY id_compra DESC LIMIT 1 ");
+              $result = mysqli_fetch_array($sql);
+              $link = "./send-paypal-pay.php";
+              
+        }else{
+          $sql = mysqli_query($link,"SELECT SUM(subtotal_cart) as tot FROM carrito WHERE id_usuario = $id_user");
+          $result = mysqli_fetch_array($sql);
+              $link = "./send-paypal.php";
+        }
+      ?>
+        <!-- =============================== -->
+        <script src="js/mobileBtn.js"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=Af36IPq7PCAIYRFjqKAmUsOyitbCMGcnL-WEjZQ1a9CTC2-Iqu8e53oh0uRNvG-kmp8TgEEDZnSH7QCx&currency=MXN"></script>
     
-    </section>
-<!-- =============================== -->
-    <script src="js/mobileBtn.js"></script>
+    <script>
+      paypal.Buttons({
+        // Order is created on the server and the order id is returned
+        createOrder: function(data,actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount:{
+                value:<?php echo $result['tot'];?>
+              }
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+          	
+          	if(details.status == 'COMPLETED'){
+          		location.href="<?php echo $link?>"
+          	}
+           
+          });
+        }
+      }).render('#paypal-button-container');
+    </script>
+
     <script src="css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script> 
     </body>
 </html>

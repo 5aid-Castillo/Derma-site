@@ -99,37 +99,18 @@ if(@!$_SESSION['user']){
         <p align="center"><strong>Titular:</strong><?php echo $data['titular']?></p>
         <p align="center"><strong>Banco:</strong><?php echo $data['banco']?></p>
 
-        <?php 
-          if(isset($_GET['id_producto'])){
-            
-
-
-            $sql = mysqli_query($link,"SELECT * FROM directo WHERE id_usuario = '$id_user' ORDER BY id_compra DESC LIMIT 1");
-            $res = mysqli_fetch_array($sql);
-          ?>
-            <p align="center" style="color:green"><strong style="color:black">Total a pagar:</strong>$ <?php echo $res['tot'];?></p>
-        <?php 
-          }else{
-            
-            $sql2 = mysqli_query($link,"SELECT SUM(subtotal_cart) as mtotal FROM carrito WHERE id_usuario = $id_user");
-            $res2 = mysqli_fetch_array($sql2);
-            ?>
-            <p align="center" style="color:green"><strong style="color:black">Total a pagar:</strong>$ <?php echo $res2['mtotal']?></p>
-          <?php   
-          }
-          ?>
-        <style></style>
+       
+        <p align="center" style="color:green"><strong style="color:black">Total a pagar:</strong>$700</p>
+       
     </div>
 
       
     <p align="center"><strong >Una vez que realices la transferencia, envia el comprobante de transferencia aqui:</strong></p>
     <div class="btn-send-transfer">
-      <?php if(isset($_GET['id_producto'])){?>
-      <a type="button" class="btn btn-success" href="./helpers/add-transfer-pay.php" target="_blank">Enviar comprobante</a>
-      <?php } else{ ?>
+     
         
-      <a type="button" class="btn btn-success" href="./helpers/add-transfer.php" target="_blank">Enviar comprobante</a>
-       <?php }?>   
+      <a type="button" class="btn btn-success" href="./helpers/add-transfer-cons.php" target="_blank">Enviar comprobante</a>
+       
       <style>.btn-send-transfer{display:flex;align-items:center;justify-content:center; margin-top:1.2rem;flex-direction:column} </style>
           
           <button type="button" class="btn btn-danger" style="margin-top:1.2rem;" onclick="location.href='./index.php'">Salir</button>
