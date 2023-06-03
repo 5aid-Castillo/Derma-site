@@ -149,7 +149,7 @@
       </div>
       <div class="popular-img">
         <div class="img-2">
-          <a href="#">
+          <a href="./categories.php?t=Facial">
           <div class="categories">
             <div class="overlay"></div> 
           <img
@@ -165,7 +165,7 @@
         </div>
         </a>
           
-        <a href="#">
+        <a href="./categories.php?t=Corporal">
         <div class="categories">
             <div class="overlay"></div> 
           <img
@@ -183,7 +183,7 @@
         </div>
         
         <div class="img-2">
-        <a href="#">
+        <a href="./categories.php?t=Cabello">
         <div class="categories">
             <div class="overlay"></div> 
           <img
@@ -199,7 +199,7 @@
         </div>
         </a>
           
-        <a href="#">
+        <a href="./categories.php?t=Nutracéuticos">
         <div class="categories">
             <div class="overlay"></div> 
           <img
