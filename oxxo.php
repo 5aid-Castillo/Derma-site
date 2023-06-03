@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+error_reporting(0);
 include('./db/connect_db.php');
 session_start();
 

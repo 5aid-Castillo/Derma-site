@@ -15,7 +15,7 @@
         $cantidad = $row['cant'];
 
        
-    mysqli_query($link,"INSERT INTO pedido VALUES(NULL,'Oxxo','$pedido','$id_user','$cantidad',CURDATE())");
+    mysqli_query($link,"INSERT INTO pedido VALUES(NULL,'Oxxo','$pedido','$id_user','$cantidad',CURDATE(),'Pendiente')");
     }
     mysqli_query($link, "DELETE FROM directo WHERE id_usuario = '$id_user'");
     echo("<script>location.href = '../account/order.php'; </script>");

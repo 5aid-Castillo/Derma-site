@@ -5,6 +5,7 @@ include('../db/connect_db.php');
 if(@!$_SESSION['admin']){
     echo("<script>location.href = '../index.php';</script>");
 }
+
 ?>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@ if(@!$_SESSION['admin']){
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>Mensajes -Panel</title>
+	<title>Pedidos -Panel</title>
 </head>
 <body>
 
@@ -34,7 +35,7 @@ if(@!$_SESSION['admin']){
 					<span class="text">Inicio</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="./pedidos.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Pedidos</span>
@@ -52,7 +53,7 @@ if(@!$_SESSION['admin']){
 					<span class="text">Mis Productos</span>
 				</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="./message.php">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Mensajes</span>
@@ -70,11 +71,10 @@ if(@!$_SESSION['admin']){
 			</li>
 		</ul>
 	</section>
-	<!-- SIDEBAR -->
+	
 
 
 
-	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
 		<nav>
@@ -88,47 +88,63 @@ if(@!$_SESSION['admin']){
 
 		<!-- MAIN -->
 		<main>
-			<div class="head-title">
-				<div class="left">
-					<h1>Mensajes recibidos</h1>
-					
-				</div>
-			</div>
-
 			
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Buzon de mensajes</h3>
-			
+						<h3>Estatus</h3>
 					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>Nombre</th>
-								<th>Correo</th>
-								<th>Mensaje</th>
-                                <th>Eliminar</th>
-							</tr>
-						</thead>
-						<tbody>
-                            <?php
-                                $query = $link-> query("SELECT * FROM comentarios ") or die($link->error);
-                                while($row = mysqli_fetch_array($query)){
-                            ?>
-							<tr>
-								<td>
-									<!-- <img src="img/people.png"> -->
-									<p><?php echo $row['nombre']?></p>
-								</td>
-								<td><?php echo $row['correo']?></td>
-								<td><small><?php echo $row['mensaje']; ?></small></td>
-                                <td><a href="../admin/delete-message.php?id_message=<?php echo $row['id_comentario']?>"><img src="../assets/marca-x.png" alt="eliminar" style="width:20px; height:20px;"/></a></td>
-							</tr>
-                            <?php } ?>
-						</tbody>
-					</table>
+					
+<?php 
+    $id_pedido = $_GET['id_order'];
+    $query = mysqli_query($link,"SELECT * FROM pedido WHERE id_pedido = $id_pedido");
+    $row = mysqli_fetch_array($query);
+?>
+                    
+
+                    <form action="../admin/change-status.php?id_pedido=<?php echo $id_pedido?>" method="POST" class="order-status">
+                        <select name="estatus" id="estatus">
+
+                            <option value="<?php echo $row['status']?>"><?php echo $row['status']?></option>     
+                            <option value="Pendiente">Pendiente</option>     
+                            <option value="Enviado">Enviado</option>     
+                            <option value="Entregado">Entregado</option>     
+                                
+                               
+                        </select>
+
+                        <input value="Actualizar" type="submit" name="send" class="btn-send">
+                        <style>.btn-send{background:#5cb85c; padding:.7rem;margin:1.3rem 0; text-align:center;border:0;border-radius:.7rem;color:white; font-weight:bold;cursor:pointer;}</style>
+                    </form>
+					
+					<div class="btn-r">
+						<?php 
+							$sql = mysqli_query($link,"SELECT * FROM pedido INNER JOIN usuarios ON
+							pedido.id_usuario = usuarios.id_usuario WHERE id_pedido = $id_pedido");
+							$data = mysqli_fetch_array($sql);
+						?>
+						<button onclick="location.href='./order.php?id=<?php echo $data['id_usuario']?>'">Regresar</button>
+					</div>
+				<style>
+					.order-status,.btn-r{
+						display:flex;
+						align-items:center;
+						justify-content:center;
+						flex-direction:column;
+
+					}
+					.btn-r button{
+						background:#0275d8;
+						color:white;
+						border:none;
+						border-radius: .7rem;
+						padding:1rem;
+						margin-top: 1.5rem;
+						cursor:pointer;
+					}
+				</style>
+                    
 				</div>
 				
 			</div>

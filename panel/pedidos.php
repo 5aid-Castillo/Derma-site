@@ -16,7 +16,7 @@ if(@!$_SESSION['admin']){
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>Mensajes -Panel</title>
+	<title>Pedidos -Panel</title>
 </head>
 <body>
 
@@ -34,7 +34,7 @@ if(@!$_SESSION['admin']){
 					<span class="text">Inicio</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="./pedidos.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Pedidos</span>
@@ -52,7 +52,7 @@ if(@!$_SESSION['admin']){
 					<span class="text">Mis Productos</span>
 				</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="./message.php">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Mensajes</span>
@@ -70,11 +70,10 @@ if(@!$_SESSION['admin']){
 			</li>
 		</ul>
 	</section>
-	<!-- SIDEBAR -->
+	
 
 
 
-	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
 		<nav>
@@ -90,43 +89,50 @@ if(@!$_SESSION['admin']){
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Mensajes recibidos</h1>
+					<h1>Panel de Administrador</h1>
 					
 				</div>
+				<a href="./add-products.php" class="btn-download">
+					<i class='bx bxs-add-to-queue' ></i>
+					<span class="text">Agregar productos</span>
+				</a>
 			</div>
-
-			
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Buzon de mensajes</h3>
-			
+						<h3>Pedidos recientes</h3>
+						
 					</div>
+
 					<table>
 						<thead>
 							<tr>
-								<th>Nombre</th>
-								<th>Correo</th>
-								<th>Mensaje</th>
-                                <th>Eliminar</th>
+								<th>Usuario</th>
+								<th>Pedido</th>
+								<th>Fecha</th>
 							</tr>
 						</thead>
 						<tbody>
-                            <?php
-                                $query = $link-> query("SELECT * FROM comentarios ") or die($link->error);
-                                while($row = mysqli_fetch_array($query)){
-                            ?>
+							<?php 	
+ 
+							$query = mysqli_query($link,"SELECT * FROM (SELECT * FROM pedido GROUP BY id_usuario) pedido INNER JOIN usuarios ON pedido.id_usuario = usuarios.id_usuario");
+										 
+							while($row = mysqli_fetch_array($query)){
+						?>
+							
 							<tr>
 								<td>
-									<!-- <img src="img/people.png"> -->
-									<p><?php echo $row['nombre']?></p>
+									<p><?php echo $row['usuario']?></p>
 								</td>
-								<td><?php echo $row['correo']?></td>
-								<td><small><?php echo $row['mensaje']; ?></small></td>
-                                <td><a href="../admin/delete-message.php?id_message=<?php echo $row['id_comentario']?>"><img src="../assets/marca-x.png" alt="eliminar" style="width:20px; height:20px;"/></a></td>
+								<td><span class="status completed"><a href="./order.php?id=<?php echo $row['id_usuario']?> " style="color:white">Ver pedido</a></span></td>
+								<td>
+									<p><?php echo $row['fecha']?></p>
+								</td>
 							</tr>
-                            <?php } ?>
+							
+								 <?php }?>
+							
 						</tbody>
 					</table>
 				</div>

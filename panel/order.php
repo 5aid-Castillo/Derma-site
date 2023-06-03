@@ -5,18 +5,19 @@ include('../db/connect_db.php');
 if(@!$_SESSION['admin']){
     echo("<script>location.href = '../index.php';</script>");
 }
+$user=$_GET['id'];
 ?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<link rel="icon" type="image/png" href="../assets/logo.png"/>
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>Panel de Administrador</title>
+	<title>Pedidos -Panel</title>
 </head>
 <body>
 
@@ -25,23 +26,23 @@ if(@!$_SESSION['admin']){
 	<section id="sidebar">
 		<a href="./index.php" class="brand">
 			<i class='bx bxs-sun'></i>
-			<span class="text">Universodetupiel</span>
+			<span class="text">U</span>
 		</a>
 		<ul class="side-menu top">
-			<li class="active">
+			<li >
 				<a href="./index.php">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Inicio</span>
 				</a>
 			</li>
-			<li>
-				<a href="#">
+			<li class="active">
+				<a href="./pedidos.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Pedidos</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="./consultas.php">
 					<i class='bx bxs-user-voice' ></i>
 					<span class="text">Consultas</span>
 				</a>
@@ -87,124 +88,88 @@ if(@!$_SESSION['admin']){
 
 		<!-- MAIN -->
 		<main>
-			<!-- <div class="head-title">
-				<div class="left">
-					<h1>Panel de Administrador</h1>
-					
-				</div>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Agregar productos</span>
-				</a>
-			</div> -->
-
+			
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
 						<h3>Detalles</h3>
 					</div>
-                    <h5>Usuario: SAID</h5> <button>Ver detalles del envio</button>
-                    <br>
+					<?php 
+					$sql = mysqli_query($link,"SELECT * FROM usuarios WHERE id_usuario =$user");
+					$res = mysqli_fetch_array($sql);
+					?>
+                    <p><strong>Pedido de:</strong> <?php echo $res['usuario'];?></p> 
+					<div class="btn-choose-send">
+				
+						<button class="btn-show" onclick="location.href='./order-shipment.php?id=<?php echo $user?>'">Ver detalles de envio</button>
+					</div>
+                    
+					<style>
+						.btn-show{padding:1rem;margin:1rem 0.5rem;font-weight:bold; background: #0275d8;color:white; border:none;border-radius:0.7rem;cursor:pointer}
+					</style>
+					<br>
 
 					<table>
 						<thead>
 							<tr>
 								<th>Producto</th>
-								<th>Precio</th>
-								<th>Promocion</th>
-                                <th>Fecha</th>
-								<th>Pago</th>
+								<th>Cantidad</th>
+								<!-- <th>Pago</th>
+                                <th>Fecha</th> -->
+                                <th>Estatus</th>
+                                <th>Detalles</th>
+
 								
 							</tr>
 						</thead>
 						<tbody>
 							<?php 
-							/* 		$query = mysqli_query($link,"SELECT * 
-									FROM productos 
-									INNER JOIN pedido 
-									ON productos.id_producto = pedido.id_producto
-									INNER JOIN usuarios 
-									ON pedido.id_usuario = usuarios.id_usuario");
-									while($row = mysqli_fetch_array($query)){ */
+							 	$query = mysqli_query($link, "SELECT * FROM  usuarios 
+								INNER JOIN pedido 
+								ON usuarios.id_usuario = pedido.id_usuario 
+								INNER JOIN productos 
+								ON pedido.id_producto = productos.id_producto");
+									
+									while($row = mysqli_fetch_array($query)){
                                     
                             ?>
 							
 							<tr>
 								<td>
-									<p><?php echo $_GET['id_pedido']?></p>
+									<p><?php echo $row['producto']?></p>
 								</td>
+								
 								<td>
-									<p></p>
+									<p><?php echo $row['cantidad']?></p>
 								</td>
-								<td><span class="status completed"></span></td>
+								
+								<?php 
+								$link = './change-order.php?id_order='.$row['id_pedido'].'';
+								
+									switch($row['status']){
+										case 'Entregado': echo "<td><a href='".$link."'><span class='status entregado'>".$row['status']." </span></a></td>";
+										break;
+										case 'Enviado':echo "<td><a href='".$link."'<span class='status proceso'> ".$row['status']."</span></a></td>";
+										break;
+										case 'Pendiente':echo "<td><a href='".$link."'<span class='status pendiente'> ".$row['status']."</span></a></td>";
+										break;
+										default:
+										echo "<td><span class='status completed'>Ninguno</span></td>";
+									}
+								?>
+
+							
+
+								<td><span class="status completed"><a style="color:white" href="./order-details.php?id_pedido=<?php echo $row['id_pedido']?>"> Detalles</a></span></td>
 							</tr>
 									
-								 <?php /* } */ ?>
-							<!-- <tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr> -->
+								 <?php  } ?>
+							
 						</tbody>
 					</table>
 				</div>
-				<!-- <div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
-				</div> -->
+				
 			</div>
 		</main>
 		<!-- MAIN -->

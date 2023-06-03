@@ -82,8 +82,8 @@
   
    <section class='presencial'>
         <h2 align="center"><strong>Consulta presencial</strong></h2>
-        <p>Para realizar tu consultar presencial envia un</p>
-        <p><strong> </strong></p>
+        <p style="font-size:1.2rem">Para realizar tu consulta presencial, envía un mensaje al número:</p>
+        <p align="center" style="margin-top:1.5rem"><a href="https://wa.me/522212193377"  target="_blank"><img src="../assets/whatsapp.png" alt="wts" style="width:40px;height:40px">+52 2212193377</a></p>
    </section>
 
     <!-- WhatsApp -->

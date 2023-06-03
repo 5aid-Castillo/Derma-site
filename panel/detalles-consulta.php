@@ -10,13 +10,13 @@ if(@!$_SESSION['admin']){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<link rel="icon" type="image/png" href="../assets/logo.png"/>
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>Mensajes -Panel</title>
+	<title>Consultas -Panel</title>
 </head>
 <body>
 
@@ -25,7 +25,7 @@ if(@!$_SESSION['admin']){
 	<section id="sidebar">
 		<a href="./index.php" class="brand">
 			<i class='bx bxs-sun'></i>
-			<span class="text">Universodetupiel</span>
+			<span class="text">U</span>
 		</a>
 		<ul class="side-menu top">
 			<li >
@@ -35,13 +35,13 @@ if(@!$_SESSION['admin']){
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="./pedidos.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Pedidos</span>
 				</a>
 			</li>
-			<li>
-				<a href="#">
+			<li class="active">
+				<a href="./consultas.php">
 					<i class='bx bxs-user-voice' ></i>
 					<span class="text">Consultas</span>
 				</a>
@@ -52,7 +52,7 @@ if(@!$_SESSION['admin']){
 					<span class="text">Mis Productos</span>
 				</a>
 			</li>
-			<li class="active">
+			<li >
 				<a href="./message.php">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Mensajes</span>
@@ -79,10 +79,6 @@ if(@!$_SESSION['admin']){
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<!-- <a href="#" class="nav-link">Categories</a>
-			
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label> -->
 			
 			<a href="./admin.php" class="profile">
 				<img src="../assets/administrador.png">
@@ -94,7 +90,7 @@ if(@!$_SESSION['admin']){
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Mensajes recibidos</h1>
+					<h1>Consultas</h1>
 					
 				</div>
 			</div>
@@ -104,7 +100,7 @@ if(@!$_SESSION['admin']){
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Buzon de mensajes</h3>
+						<h3>Detalles de consulta</h3>
 			
 					</div>
 					<?php 
@@ -128,7 +124,7 @@ if(@!$_SESSION['admin']){
                         <p><strong>Cita:</strong><?php echo $row['cita']?></p>
                         
                         <button onclick="location.href='./consultas.php'" style="padding:1rem;font-weight:bold;border:none;border-radius:0.7rem;background:#3B71CA; color:white;cursor:pointer">Regresar</button>
-                        <button onclick="location.href='../admin/delete-consulta.php?id_consulta=<?php echo $row['id_consulta']?>'" style="padding:1rem; font-weight:bold;border:none;border-radius:0.7rem;background:#DC4C64; cursor:pointer;">Eliminar</button>
+                        <button onclick="location.href='../admin/delete-consulta.php?id_consulta=<?php echo $row['id_consulta']?>'" style="padding:1rem; font-weight:bold;border:none;border-radius:0.7rem;background:#DC4C64; cursor:pointer;color:white">Eliminar</button>
                         <style>.consulta{display:flex;align-items:center;justify-content:center;flex-direction:column} .consulta *{margin-top:1rem}</style>
 
                     </div>

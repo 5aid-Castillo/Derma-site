@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
-session_start();
 include('../db/connect_db.php');
+session_start();
 if(@!$_SESSION['admin']){
     echo("<script>location.href = '../index.php';</script>");
 }
@@ -10,13 +10,13 @@ if(@!$_SESSION['admin']){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<link rel="icon" type="image/png" href="../assets/logo.png"/>
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>Productos -Panel</title>
+	<title>Agregar Productos</title>
 </head>
 <body>
 
@@ -25,7 +25,7 @@ if(@!$_SESSION['admin']){
 	<section id="sidebar">
 		<a href="./index.php" class="brand">
 			<i class='bx bxs-smile'></i>
-			<span class="text">Universodetupiel</span>
+			<span class="text">U</span>
 		</a>
 		<ul class="side-menu top">
 			<li >
@@ -35,13 +35,13 @@ if(@!$_SESSION['admin']){
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="./pedidos.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Pedidos</span>
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="./consultas.php">
 					<i class='bx bxs-user-voice' ></i>
 					<span class="text">Consultas</span>
 				</a>
@@ -81,7 +81,7 @@ if(@!$_SESSION['admin']){
 		<nav>
 			<i class='bx bx-menu' ></i>
 			
-			<a href="./index.php" class="profile">
+			<a href="./admin.php" class="profile">
 				<img src="../assets/administrador.png">
 			</a>
 		</nav>
@@ -94,10 +94,7 @@ if(@!$_SESSION['admin']){
 					<h1>Mis productos</h1>
 					
 				</div>
-				 <a href="./add-products.php" class="btn-download" style="background: #5cb85c !important;">
-					<i class='bx bxs-add-to-queue' ></i>
-					<span class="text">Agregar nuevo producto</span>
-				</a> 
+				 
 			</div>
 
 		
@@ -110,71 +107,112 @@ if(@!$_SESSION['admin']){
 						
 					</div>
 
-					<table>
-						<thead>
-							<tr>								
-
-								<th>Producto</th>
-								<th>Categoria</th>
-								<th>Detalles</th>
-                                
-								
-							</tr>
-						</thead>
-						<tbody>
-							<?php 
-							$query = mysqli_query($link,"SELECT * FROM productos");
-							while($data = mysqli_fetch_array($query)){
-
-							?>
-						
-							<tr>
-								<td>
-									<p><?php echo $data['producto']?></p>
-								</td>
-								<td>
-									<p><?php echo $data['categoria']?></p>
-								</td>
-								<td><span class="status completed"><a href="./product-details.php?id_producto=<?php echo $data['id_producto'];?>">Detalles</a></span></td>
-							</tr>
-							<?php }?>
-								 
-							<!-- <tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr> -->
-						</tbody>
-					</table>
 					
-				</div>
+                    <form class="add-products" method="POST" action="../admin/add-product.php" enctype="multipart/form-data">
+                        
+						<div class="cont-prod">
+                        <label for="uploaded">Imagen:</label>
+                        <input name="archivo" id="archivo" type="file" />
+                        </div>
+
+						<div class="cont-prod">
+                        <label for="producto">Producto:</label>
+                        <input type="text" name="producto" >
+                        </div>
+
+						<div class="cont-prod">
+						<label for="descripcion">Descripción:</label>
+                        <input type="text" name="descripcion">
+                        </div>
+
+						<div class="cont-prod">
+						<label for="resumen">Resumen:</label>
+                        <input type="text" name="resumen">
+                        </div>
+
+						<div class="cont-prod">
+						<label for="precio">Precio</label>
+                        <input type="text" name="precio">
+                        </div>
+
+						<div class="cont-prod">
+						<label for="categoria">Categoria:</label>
+                         <select name="categoria" id="categoria">
+							<option value="Ninguno">Ninguno</option>
+                            <option value="Facial">Facial</option>
+                            <option value="Corporal">Corporal</option>
+                            <option value="Nutracéuticos">Nutracéuticos</option>
+                            <option value="Cabello">Cabello</option>
+                         </select> 
+						 </div>
+
+						 <div class="cont-prod">
+						<label for="promocion">Promoción:</label>
+                        <input type="text" name="promocion">
+                        </div>
+
+						<div class="cont-prod">
+						<label for="porcion">Cantidad:</label>
+                        <input type="text" name="porcion">
+						</div>
+
+						<div class="cont-prod">
+                        <label for="tipo">Tipo</label>
+                        <input type="text" name="tipo">
+                        </div>
+
+						<div class="cont-prod">
+						<label for="recomendaciones">Recomendaciones:</label>
+                        <input type="text" name="recomendaciones">
+                        </div>
+
+						<div class="cont-prod">
+						<small>Añadir maximo 9:</small><br>
+						<label for="stock">Inventario:</label>
+                        <input type="text" name="stock">
+						</div>
+
+
+						<input type="submit" class="btn-prod add" name="subir" value="Agregar">
+						
+						<style>
+							
+							.add-products,.cont-prod{
+								display:flex;
+								align-items:center;
+								justify-content:center;
+								flex-direction:column;
+							}
+							.add-products *{
+								margin-top:1.2rem;
+							}
+							input{
+								padding:0.8rem;
+								border-radius:0.7rem
+							}
+							.btn-prod{
+								margin-top:2rem;
+								padding:0.7rem;
+								border-radius:0.7rem;
+								border:none;
+								cursor: pointer;
+							}
+							.add{
+								background:#14A44D;
+								color:white;
+							}
+							.ret{
+								background:#3B71CA;
+								color:white;
+							}
+						</style>
+
+
+						</form>
+						<div style="display:flex;align-items:center;justify-content:center;">
+						<button onclick="location.href='./productos.php'" class="btn-prod ret">Regresar</button>
+						</div>		
+					</div>
 				
 			</div>
 		</main>

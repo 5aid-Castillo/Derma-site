@@ -10,7 +10,7 @@ if(@!$_SESSION['admin']){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<link rel="icon" type="image/png" href="../assets/logo.png"/>
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
@@ -25,7 +25,7 @@ if(@!$_SESSION['admin']){
 	<section id="sidebar">
 		<a href="./index.php" class="brand">
 			<i class='bx bxs-sun'></i>
-			<span class="text">Universodetupiel</span>
+			<span class="text">U</span>
 		</a>
 		<ul class="side-menu top">
 			<li >
@@ -35,7 +35,7 @@ if(@!$_SESSION['admin']){
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="./pedidos.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Pedidos</span>
 				</a>
@@ -129,7 +129,7 @@ if(@!$_SESSION['admin']){
 									<p><?php echo $row['usuario']?></p>
 								</td>
 								<td><?php echo $row['correo']?></td>
-								<td><span class="status completed"><a href="./detalles-consulta.php?id_consulta=<?php echo $row['id_consulta'];?>">Detalles</a></span></td>
+								<td><span class="status completed"><a href="./detalles-consulta.php?id_consulta=<?php echo $row['id_consulta'];?>" style="color:white">Detalles</a></span></td>
                                 
 							</tr>
                             <?php } ?>

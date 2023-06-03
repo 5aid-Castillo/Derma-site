@@ -88,6 +88,8 @@ if(@!$_SESSION['user']){
       <th scope="col"></th>
       <th scope="col">Producto</th>
       <th scope="col">Cantidad</th>
+      <th scope="col">Estatus</th>
+      
       
     </tr>
   </thead>
@@ -112,11 +114,8 @@ if(@!$_SESSION['user']){
       <th scope="row"><img src="../img/products/<?php echo $row['imagen']?>" alt="" style="width:35px; height:35px"></th>
       <td ><?php echo $row['producto']?></td>
       <td ><?php echo $row['cantidad'];?></td>
+      <td><?php echo $row['status'];?></td>
     </tr> 
-    
- 
-
-
 
         <?php }?>
 
@@ -125,6 +124,8 @@ if(@!$_SESSION['user']){
             </div>
 
   </section>
+
+  
 
 
   <div class="chat">

@@ -10,7 +10,7 @@ if(@!$_SESSION['admin']){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<link rel="icon" type="image/png" href="../assets/logo.png"/>
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
@@ -25,7 +25,7 @@ if(@!$_SESSION['admin']){
 	<section id="sidebar">
 		<a href="./index.php" class="brand">
 			<i class='bx bxs-sun'></i>
-			<span class="text">Universodetupiel</span>
+			<span class="text">U</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
@@ -35,7 +35,7 @@ if(@!$_SESSION['admin']){
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="./pedidos.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Pedidos</span>
 				</a>
@@ -145,90 +145,26 @@ if(@!$_SESSION['admin']){
 						</thead>
 						<tbody>
 							<?php 
-									$query = mysqli_query($link,"SELECT * 
-									FROM productos 
-									INNER JOIN pedido 
-									ON productos.id_producto = pedido.id_producto
-									INNER JOIN usuarios 
-									ON pedido.id_usuario = usuarios.id_usuario");
-									while($row = mysqli_fetch_array($query)){
+							$query = mysqli_query($link,"SELECT * FROM (SELECT * FROM pedido GROUP BY id_usuario ORDER BY fecha DESC LIMIT 20) pedido INNER JOIN usuarios ON pedido.id_usuario = usuarios.id_usuario");
+										 
+							while($row = mysqli_fetch_array($query)){
 										?>
-							<a href="#">
+							
 							<tr>
 								<td>
 									<p><?php echo $row['usuario']?></p>
 								</td>
-								<td><span class="status completed"><a href="./order.php?id_pedido=<?php echo $row['id_pedido']?>">Ver pedido</a></span></td>
+								<td><span class="status completed"><a href="./order.php?id=<?php echo $row['id_usuario']?>" style="color:white">Ver pedido</a></span></td>
 								<td>
 									<p><?php echo $row['fecha']?></p>
 								</td>
 							</tr>
-							</a>
+							
 								 <?php }?>
-							<!-- <tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
-							</tr> -->
-						</tbody>
+												</tbody>
 					</table>
 				</div>
-				<!-- <div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
-				</div> -->
+			
 			</div>
 		</main>
 		<!-- MAIN -->

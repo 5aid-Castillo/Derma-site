@@ -14,7 +14,7 @@ while($row = mysqli_fetch_array($query)){
     $pedido = $row['id_producto'];
     $cantidad = $row['cantidad'];
    
-mysqli_query($link,"INSERT INTO pedido VALUES(NULL,'Paypal','$pedido','$id_user','$cantidad',CURDATE())");
+mysqli_query($link,"INSERT INTO pedido VALUES(NULL,'Paypal','$pedido','$id_user','$cantidad',CURDATE(),'Pendiente')");
 }
 mysqli_query($link, "DELETE FROM carrito WHERE id_usuario = '$id_user'");
 echo("<script>location.href = './thankyou.php'; </script>");

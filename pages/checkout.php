@@ -120,8 +120,9 @@
         <label for="apellidos">Apellidos:</label>
         <input type="text" name="apellidos" id="apellidos" />
       </div>
+      
       <div class="input-group">
-          <label for="telefono">Número de teléfono</label>
+          <label for="telefono">Número de teléfono:</label>
           <input type="text" name="telefono" id="telefono" />
         </div>
       <div>

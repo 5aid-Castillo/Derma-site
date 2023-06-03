@@ -481,11 +481,14 @@ body {
 #content main .table-data .order table tr td .status.completed {
 	background: var(--blue);
 }
-#content main .table-data .order table tr td .status.process {
-	background: var(--yellow);
+#content main .table-data .order table tr td .status.pendiente {
+	background: #d9534f;
 }
-#content main .table-data .order table tr td .status.pending {
-	background: var(--orange);
+#content main .table-data .order table tr td .status.proceso {
+	background: #f0ad4e;
+}
+#content main .table-data .order table tr td .status.entregado {
+	background: #5cb85c;
 }
 
 
