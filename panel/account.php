@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
-session_start();
 include('../db/connect_db.php');
+session_start();
 if(@!$_SESSION['admin']){
     echo("<script>location.href = '../index.php';</script>");
 }
@@ -10,13 +10,13 @@ if(@!$_SESSION['admin']){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/logo.png"/>
+	<link rel="icon" type="image/png" href="../assets/logo.png"/>
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>Configuracion -Panel</title>
+	<title>Editar Cuenta</title>
 </head>
 <body>
 
@@ -24,11 +24,11 @@ if(@!$_SESSION['admin']){
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="./index.php" class="brand">
-			<i class='bx bxs-sun'></i>
+			<i class='bx bxs-smile'></i>
 			<span class="text">U</span>
 		</a>
 		<ul class="side-menu top">
-			<li class="active">
+			<li >
 				<a href="./index.php">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Inicio</span>
@@ -46,12 +46,13 @@ if(@!$_SESSION['admin']){
 					<span class="text">Consultas</span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="./productos.php">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">Mis Productos</span>
 				</a>
 			</li>
+			
 			<li >
 				<a href="./message.php">
 					<i class='bx bxs-message-dots' ></i>
@@ -79,7 +80,6 @@ if(@!$_SESSION['admin']){
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-		
 			
 			<a href="./admin.php" class="profile">
 				<img src="../assets/administrador.png">
@@ -87,77 +87,49 @@ if(@!$_SESSION['admin']){
 		</nav>
 		<!-- NAVBAR -->
 
+		<?php 
+					$sql = mysqli_query($link,"SELECT * FROM cuenta");
+					$data = mysqli_fetch_array($sql);
+					?>	
 		<!-- MAIN -->
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Administrador</h1>
+					<h1>Cuenta</h1>
 					
 				</div>
-                <a href="../panel/add-admin.php" class="btn-download">
-					<i class='bx bxs-user-plus' ></i>
-					<span class="text">Agregar administrador</span>
-				</a>
-                <a href="./account.php" class="btn-download-1">
-					<i class='bx bxs-credit-card' ></i>
-					<span class="text">Transferencia</span>
-				</a>
-				<style>
-			.btn-download-1{height: 36px;
-				padding: 0 16px;
-				border-radius: 36px;
-				background: #0275d8;
-				color: var(--light);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				grid-gap: 10px;
-				font-weight: 500;
-				} 
-			.btn-download-1 .bx{
-				color:white
-				} 
-			.btn-download-1 span{
-				color:white
-				}
-				</style> 
-					
-			</div><!-- Head title -->
+				 <a href="./edit-account.php" class="btn-download">
+					<i class='bx bxs-edit-alt' ></i>
+					<span class="text">Editar cuenta</span>
+				</a>  
+			</div>
 
+		
 
-            	
 
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Perfiles de administrador</h3>
-			
+						<h3>Mi cuenta</h3>
+						
 					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>Nombre</th>
-								<th>Correo</th>
-                                <th>Eliminar</th>
-							</tr>
-						</thead>
-						<tbody>
-                            <?php
-                                $query = $link-> query("SELECT * FROM usuarios WHERE roll = '1'") or die($link->error);
-                                while($row = mysqli_fetch_array($query)){
-                            ?>
-							<tr>
-								<td>
-									<!-- <img src="img/people.png"> -->
-									<p><?php echo $row['usuario']?></p>
-								</td>
-								<td><?php echo $row['correo']?></td>
-								
-                                <td><a href="../admin/delete-admin.php?id_admin=<?php echo $row['id_usuario']?>"><img src="../assets/marca-x.png" alt="eliminar" style="width:20px; height:20px;"/></a></td>
-							</tr>
-                            <?php } ?>
-						</tbody>
-					</table>
+
+					<div class="detalles">
+                        <style>.detalles{display:flex;align-items:center;justify-content:center; flex-direction:column}</style>
+                  
+					
+					<div class="data">
+						<p><strong>Cuenta:</strong><?php echo $data['cuenta']?></p>
+					</div>
+					<div class="data">
+						<p><strong>Titular:</strong><?php echo $data['titular']?></p>
+					</div>
+					<div class="data">
+						<p><strong>Banco:</strong><?php echo $data['banco']?></p>
+					</div>
+					
+					</div>
+					
 				</div>
 				
 			</div>
@@ -168,6 +140,6 @@ if(@!$_SESSION['admin']){
 	
 
 	<script src="script.js"></script>
-    
+   
 </body>
 </html>
