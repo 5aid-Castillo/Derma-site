@@ -48,22 +48,4 @@
        }
     }
 
-    /* $prod = $_POST['producto'];
-    $desc = $_POST['descripcion'];
-    $res = $_POST['resumen'];
-    $precio = $_POST['precio'];
-    $cat = $_POST['categoria'];
-    $prom = $_POST['promocion'];
-    $cant = $_POST['porcion'];
-    $tipo = $_POST['tipo'];
-    $recom= $_POST['recomendaciones'];
-    $stock= $_POST['stock'];
-
-
-    mysqli_query($link,"INSERT INTO productos VALUES (NULL,'$prod','$image','$desc','$res','$precio','$cat','$prom','$cant','$tipo','$recom','$stock')"); */
-/*     echo("<script>location.href = './productos.php'; </script>"); */
-    
-    
-    /* echo("<script>location.href = '../panel/productos.php'; </script>"); */
-    
 ?>

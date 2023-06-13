@@ -143,6 +143,7 @@ if(@!$_SESSION['admin']){
                             <option value="Corporal">Corporal</option>
                             <option value="Nutracéuticos">Nutracéuticos</option>
                             <option value="Cabello">Cabello</option>
+                            <option value="Boutique">Boutique</option>
                          </select> 
 						 </div>
 

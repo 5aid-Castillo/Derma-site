@@ -102,10 +102,7 @@
     <section class="section main">
 
       <div class="title">
-        <h1
-       
-
-        >
+        <h1>
           Dermatologia
         </h1>
     <!--     <hr /> -->
@@ -216,6 +213,40 @@
         </a> 
         </div>
         
+        <div class="img-2">
+        <a href="./categories.php?t=Boutique">
+        <div class="categories">
+            <div class="overlay"></div> 
+          <img
+            src="./img/cosmetic.jpg"
+            alt=""
+            
+          />
+          <div class="indexContent container">
+             <div class="indexText">
+                <h1 class="title-ind">Boutique</h1>
+             </div>    
+          </div>
+        </div>
+        </a>
+          
+        <a href="./pages/cursos/php">
+        <div class="categories">
+            <div class="overlay"></div> 
+          <img
+            src="./img/cursos.jpg"
+            alt=""
+            
+          />
+          <div class="indexContent container">
+             <div class="indexText">
+                <h1 class="title-ind">Cursos</h1>
+             </div>    
+          </div>
+        </div>
+        </a> 
+        </div>
+        
       </div>
       <center class="btn-go">
         <button class="button-go" onclick="location.href='tienda.php'">Ver productos</button>
@@ -233,10 +264,14 @@
             a:
           </p>
           <ul>
-            <li>-Pieles con acné.</li>
+            <li>Cuidado de la piel sana.</li>
+            <li>Cuidado de la piel joven.</li>
+            <li>Recuperacion capilar</li>
+            <li>Cuidado de la piel "Skin care personalizado".</li>
+            <!-- <li>-Pieles con acné.</li>
             <li>-Pieles con manchas.</li>
             <li>-Pieles con cicatrices.</li>
-            <li>-Pieles con celulitis.</li>
+            <li>-Pieles con celulitis.</li> -->
           </ul>
         </article>
         <article class="about-img">

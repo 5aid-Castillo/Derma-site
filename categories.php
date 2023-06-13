@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="./assets/logo.png"/>
+    <link rel="stylesheet" href="css/bootstrap-5.2.3-dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/estilos-generales.css?v=2" />
     <link rel="stylesheet" href="css/estilos-main.css?v=2" />
     <link rel="stylesheet" href="css/stylesTienda.css?v2" />
@@ -115,7 +116,7 @@
             $categoria = $_GET['t'];
             
             $result = $link-> query("SELECT * FROM productos WHERE categoria = '$categoria' ORDER BY rand()") or die ($link->error);
-            
+            if($result->num_rows > 0){
             while($row = mysqli_fetch_array($result)){
           ?>
           <div class="single-product">
@@ -147,6 +148,15 @@
          </div>
          <?php 
             }
+          }else{ ?>
+            <div class="sin">
+            <div class="alert alert-dark text-center m-5" role="alert">
+            Sin resultados encontrados.
+             </div>
+           </div>
+           <style>.sin{display:flex;align-items:center;justify-content:center;}</style>
+         <?php      
+          }
             ?>
 
         </div>
@@ -165,8 +175,9 @@
       </a>
     </div>
 
-   <script src="js/mobileBtn.js"></script>
-    <script src="js/carrito.js"></script> 
-
+    <script src="css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    
+    <script src="js/mobileBtn.js"></script>
+    
   </body>
 </html>
