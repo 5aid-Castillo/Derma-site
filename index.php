@@ -128,7 +128,7 @@
       <img
       data-aos="fade-up"
         data-aos-duration="3000"
-        src="./img/imgs-landing/banner-landing.jpg"
+        src="./img/main.jpg"
         alt="landing"
       />
     </section>
@@ -206,7 +206,7 @@
           />
           <div class="indexContent container">
              <div class="indexText">
-                <h1 class="title-ind">Nutracéuticos</h1>
+                <h1 class="title-ind nutra">Nutracéuticos</h1>
              </div>    
           </div>
         </div>

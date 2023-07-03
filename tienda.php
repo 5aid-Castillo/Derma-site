@@ -138,7 +138,7 @@
                      
                 </div>
                 <div class="sourceBtn flex">
-                  <button class="detalles-btn" onclick="location.href='pages/products.php?id_producto=<?php echo $row['id_producto'];?>'">Detalles</button>
+                  <button class="detalles-btn" onclick="location.href='pages/products.php?id_producto=<?php echo $row['id_producto'];?>'">Comprar</button>
                 </div>
               </div>
          </div>

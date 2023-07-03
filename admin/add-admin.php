@@ -7,7 +7,7 @@
 
     $nombre = $_POST['name'];
     $correo = $_POST['email'];
-    $password = $_POST['password'];
+    $password = sha1($_POST['password']);
 
     $sql = "INSERT INTO usuarios VALUES (NULL,'$nombre','$correo','$password','1')";
 
