@@ -8,6 +8,7 @@
     $desc = $_POST['descripcion'];
     $res = $_POST['resumen'];
     $precio = $_POST['precio'];
+    $categoria = $_POST['categoria'];
     $prom = $_POST['promocion'];
     $cant = $_POST['porcion'];
     $tipo = $_POST['tipo'];
@@ -19,6 +20,7 @@
         descripcion = '$desc',
         resumen='$res',
         precio='$precio',
+        categoria='$categoria',
         promocion='$prom',
         porcion = '$cant',
         tipo = '$tipo',

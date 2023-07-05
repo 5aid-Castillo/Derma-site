@@ -31,7 +31,7 @@
     <title>Universodetupiel</title>
   </head>
   <body>
-    <!-- <div class="blur"></div> -->
+   
     <!-- Inicio de barra de navegacion -->
     <header class="header">
       <nav class="nav">
@@ -40,7 +40,7 @@
         
 
         <button class="nav-toggle" aria-label="Abrir menú">
-          <!-- <i class="fas fa-bars"></i> -->
+     
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
@@ -62,12 +62,7 @@
                 >Consulta</a
               >
             </li>
-           <!-- 
-            <li class="nav-menu-item-ss">
-              <a href="index.php#about" class="nav-menu-link-ss nav-link-ss"
-                >Nosotros</a
-              >
-            </li> -->
+         
             <li class="nav-menu-item-ss">
               <a href="redes.php" class="nav-menu-link-ss nav-link-ss"
                 >Redes Sociales</a

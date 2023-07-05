@@ -29,7 +29,7 @@ if(@!$_SESSION['user']){
 <body>
 <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
+        <a href="./index.php" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
           <!-- <i class="fas fa-bars"></i> -->
@@ -87,10 +87,12 @@ if(@!$_SESSION['user']){
         <h2 align="center"><strong>Selecciona el metodo de pago</strong></h2>
         
         <div class="buttons-payments">
-         <?php  if(isset($_GET['id_producto'])){ ?>
+         <?php  if(isset($_GET['id_producto'])){ 
+            
+          ?>
             
             <p class="method">Paga en efectivo con <img src="./assets/oxxo.png" alt="oxxo image" style="width:35px; height:25px"/></p>
-            <button class="button-oxxo" onclick="location.href='./oxxo_pay.php?id_producto=<?php echo $_GET['id_producto']?>'">Pagar en efectivo</button>
+            <button class="button-oxxo" onclick="location.href='./oxxo_pay.php?id_producto=<?php echo $idproducto?>'">Pagar en efectivo</button>
             <p class="method">Paga con transferencia<img src="./assets/transferencia.png" alt="transferencia" style="width:35px; height:25px"/></p>
             <button class="button-transferencia " onclick="location.href='./transferencia.php?id_producto=<?php echo $_GET['id_producto']?>'">Pagar con transferencia</button>
             
@@ -101,8 +103,8 @@ if(@!$_SESSION['user']){
             <button class="button-transferencia " onclick="location.href='./transferencia.php'">Pagar con transferencia</button>
             
           <?php  } ?>
-            <p class="method">Paga con Paypal</p>
-            <div id="paypal-button-container"></div>
+            <!-- <p class="method">Paga con Paypal</p>
+            <div id="paypal-button-container"></div> -->
             <!-- Replace "test" with your own sandbox Business account app client ID -->
             
             

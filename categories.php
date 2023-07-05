@@ -22,7 +22,7 @@
   <body>
   <header class="header">
       <nav class="nav">
-        <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
+        <a href="./index.php" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
 
         <button class="nav-toggle" aria-label="Abrir menú">
           
@@ -93,17 +93,7 @@
       </form>
     </div>
 
-    <!-- Filter -->
-      
-      <!--   <div class="select" tabindex="1">
-          <input class="selectopt" name="test" type="radio" id="opt1" checked>
-          <label for="opt1" class="option">Todo</label>
-          <input class="selectopt" name="test" type="radio" id="opt2">
-          <label for="opt2" class="option">Promociones</label>
-          <input class="selectopt" name="test" type="radio" id="opt3">
-          <label for="opt3" class="option">Nuevo</label>
-       
-        </div> -->
+   
     </section>
 
 

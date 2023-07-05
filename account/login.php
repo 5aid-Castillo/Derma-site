@@ -25,7 +25,7 @@
 <body>
     <header class="header">
         <nav class="nav">
-          <a href="/" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
+          <a href="../index.php" class="logo nav-link-ss"><h2 style="font-family: 'Playfair', serif;font-size:1.5rem;">Universodetupiel</h2></a>
   
           <button class="nav-toggle" aria-label="Abrir menú">
           <svg
@@ -87,7 +87,7 @@
           <div class="login-html">
             
              <input  type="radio" name="tab" class="sign-in " checked><label  class="tab"><a href="login.php" style="color:white;">Identificarme</a></label>
-             <input  type="radio" name="tab" class="sign-up "><label  class="tab"><a href="signup.php" style="color:white;">Regitrarme</a></label>
+             <input  type="radio" name="tab" class="sign-up "><label  class="tab"><a href="signup.php" style="color:white;">Registrarme</a></label>
               <div class="login-form">
                 <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                   <div class="sign-in-htm">

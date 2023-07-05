@@ -1,11 +1,11 @@
 <?php 
-  /*   include('../db/connect_db.php');
-    session_start(); */
+ 
  
         if(isset($_POST['send'])){
             $id_user = $_SESSION['idu'];
     
     if(isset($_GET['id_producto'])){
+        
         $name = $_POST['nombre'];
         $surnames = $_POST['apellidos'];
         $phone = $_POST['telefono'];
@@ -17,7 +17,7 @@
         $city = $_POST['ciudad'];
         $state = $_POST['estado'];
     
-        $id_producto = $_GET['id_producto'];
+        $id_producto = base64_decode($_GET['id_producto']);
         mysqli_query($link,"INSERT INTO datos VALUES(NULL,'$name','$surnames','$phone','$street','$outside','$inside','$cologne','$cp','$city','$state','$id_user')");
         
         
